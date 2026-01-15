@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/app/utils/cn";
 
 // Apple-like smooth spring/ease
-const smoothEase = [0.22, 1, 0.36, 1]; // easeOutQuint-ish
+const smoothEase: [number, number, number, number] = [0.22, 1, 0.36, 1]; // easeOutQuint-ish
 
 export const FadeIn = ({
     children,
