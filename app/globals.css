@@ -12,11 +12,11 @@ html {
 
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-50 antialiased;
+    @apply bg-white text-slate-900 antialiased;
     font-feature-settings: "cv11", "ss01";
   }
 }
 
 ::selection {
-  @apply bg-fuchsia-500/30 text-fuchsia-200;
+  @apply bg-cyan-400/30 text-cyan-200;
 }

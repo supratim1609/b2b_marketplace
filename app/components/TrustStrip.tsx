@@ -2,7 +2,7 @@ import { Hexagon, Globe2, Box, ShieldCheck, Radio } from "lucide-react";
 
 export default function TrustStrip() {
     return (
-        <div className="bg-slate-950 py-8 border-y border-white/5">
+        <div className="bg-white py-8 border-y border-slate-100">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-500 mb-6 font-heading">
                     Trusted by leading businesses & partners

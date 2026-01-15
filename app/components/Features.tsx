@@ -32,14 +32,14 @@ export default function Features() {
     ];
 
     return (
-        <div className="bg-slate-950 py-24 sm:py-32 overflow-hidden relative">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-violet-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="bg-slate-50 py-24 sm:py-32 overflow-hidden relative">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-violet-300/20 rounded-full blur-[120px] pointer-events-none mix-blend-multiply"></div>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-heading">
+                    <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-heading">
                         Why Choose bechoHub.com
                     </h2>
-                    <p className="mt-4 text-lg leading-8 text-slate-400">
+                    <p className="mt-4 text-lg leading-8 text-slate-600">
                         Built for speed, clarity, and trust in every B2B transaction.
                     </p>
                 </div>
@@ -48,18 +48,18 @@ export default function Features() {
                     <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                         {features.map((feature) => (
                             <StaggerItem key={feature.name}>
-                                <ScaleOnHover className="flex flex-col h-full bg-white/5 p-8 rounded-2xl shadow-lg shadow-black/20 border border-white/5 hover:border-transparent relative group overflow-hidden transition-all duration-300">
+                                <ScaleOnHover className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:shadow-slate-200/50 hover:border-cyan-500/30 relative group overflow-hidden transition-all duration-300">
                                     {/* Gradient Border Effect */}
-                                    <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-br from-transparent via-transparent to-transparent group-hover:from-teal-500 group-hover:via-blue-500 group-hover:to-violet-500 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="absolute inset-[1px] bg-slate-950/90 rounded-[15px] -z-10"></div>
+                                    <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-br from-transparent via-transparent to-transparent group-hover:from-cyan-400 group-hover:via-blue-500 group-hover:to-fuchsia-500 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="absolute inset-[1px] bg-white rounded-[15px] -z-10"></div>
 
-                                    <dt className="flex items-center gap-x-3 text-xl font-semibold leading-7 text-white mb-4">
-                                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 border border-white/10 group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300`}>
+                                    <dt className="flex items-center gap-x-3 text-xl font-semibold leading-7 text-slate-900 mb-4">
+                                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-200 group-hover:bg-slate-100 group-hover:scale-110 transition-all duration-300`}>
                                             <feature.icon className={`h-6 w-6 ${feature.color}`} aria-hidden="true" />
                                         </div>
                                     </dt>
-                                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all">{feature.name}</h3>
-                                    <dd className="flex flex-auto flex-col text-base leading-7 text-slate-400">
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-700 transition-all">{feature.name}</h3>
+                                    <dd className="flex flex-auto flex-col text-base leading-7 text-slate-600">
                                         <p className="flex-auto">{feature.description}</p>
                                     </dd>
                                 </ScaleOnHover>

@@ -37,16 +37,16 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-white/5 shadow-sm saturate-200' : 'bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm saturate-200' : 'bg-transparent'}`}>
       {/* Gradient Line at Bottom */}
-      {isScrolled && <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-teal-500/50 to-transparent"></div>}
+      {isScrolled && <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>}
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold tracking-tight text-white font-heading">
+              <span className="text-2xl font-bold tracking-tight text-slate-900 font-heading">
                 bechoHub.com
               </span>
             </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
               <input
                 type="text"
                 placeholder="Search for products..."
-                className="block w-full rounded-full border border-white/10 bg-white/5 py-2.5 pl-10 pr-3 text-sm text-white placeholder-slate-400 focus:border-teal-500 focus:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-teal-500 transition-all shadow-sm"
+                className="block w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-3 text-sm text-slate-900 placeholder-slate-500 focus:border-cyan-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all shadow-sm"
               />
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   "transition-colors",
-                  isActive(link.href) ? "text-white font-bold" : "text-slate-400 hover:text-white"
+                  isActive(link.href) ? "text-slate-900 font-bold" : "text-slate-600 hover:text-slate-900"
                 )}
               >
                 {link.name}
@@ -82,7 +82,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/rfq"
-              className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-200 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all active:scale-95"
+              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 transition-all active:scale-95"
             >
               Post Request
             </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-950 border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-2 shadow-lg">
               {/* Mobile Search */}
@@ -129,7 +129,7 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     "block px-3 py-2 rounded-md text-base font-medium transition-colors",
-                    isActive(link.href) ? "bg-white/10 text-white" : "text-slate-400 hover:bg-white/5 hover:text-white"
+                    isActive(link.href) ? "bg-slate-100 text-slate-900" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                   )}
                 >
                   {link.name}

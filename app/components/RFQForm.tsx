@@ -18,25 +18,25 @@ export default function RFQForm() {
     ];
 
     return (
-        <div className="bg-slate-900 rounded-2xl shadow-xl shadow-black/50 border border-white/10 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200 overflow-hidden">
             {/* Progress Bar */}
-            <div className="bg-black/20 px-6 py-4 border-b border-white/5">
+            <div className="bg-slate-50 px-6 py-4 border-b border-slate-200">
                 <div className="flex items-center justify-between">
                     {steps.map((s, i) => (
                         <div key={s.id} className="flex items-center relative">
                             <div className={`flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm transition-colors duration-300
-                            ${step >= s.id ? 'bg-teal-500 text-white' : 'bg-white/10 text-slate-500'}
+                            ${step >= s.id ? 'bg-cyan-500 text-white' : 'bg-slate-200 text-slate-500'}
                          `}>
                                 {step > s.id ? <Check className="h-5 w-5" /> : s.id}
                             </div>
                             <span className={`ml-3 text-sm font-medium hidden sm:block
-                            ${step >= s.id ? 'text-white' : 'text-slate-500'}
+                            ${step >= s.id ? 'text-slate-900' : 'text-slate-500'}
                          `}>
                                 {s.name}
                             </span>
                             {i < steps.length - 1 && (
                                 <div className={`hidden sm:block w-12 h-0.5 mx-4
-                                ${step > s.id ? 'bg-teal-500' : 'bg-white/10'}
+                                ${step > s.id ? 'bg-cyan-500' : 'bg-slate-200'}
                              `}></div>
                             )}
                         </div>
@@ -57,13 +57,13 @@ export default function RFQForm() {
                             className="space-y-6"
                         >
                             <div>
-                                <label className="block text-sm font-semibold text-slate-300 mb-2">Product Name</label>
-                                <input type="text" placeholder="e.g. Cotton Yarn 40s" className="w-full px-4 py-3 rounded-lg border border-white/10 bg-slate-950 text-white placeholder-slate-500 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" />
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Product Name</label>
+                                <input type="text" placeholder="e.g. Cotton Yarn 40s" className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all" />
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-semibold text-slate-300 mb-2">Category</label>
-                                    <select className="w-full px-4 py-3 rounded-lg border border-white/10 bg-slate-950 text-white focus:ring-2 focus:ring-teal-500 outline-none">
+                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Category</label>
+                                    <select className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-cyan-500 outline-none">
                                         <option>Select Category</option>
                                         <option>Textiles</option>
                                         <option>Electronics</option>
@@ -71,8 +71,8 @@ export default function RFQForm() {
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-slate-300 mb-2">Quantity</label>
-                                    <input type="text" placeholder="e.g. 500 kg" className="w-full px-4 py-3 rounded-lg border border-white/10 bg-slate-950 text-white placeholder-slate-500 focus:ring-2 focus:ring-teal-500 outline-none" />
+                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Quantity</label>
+                                    <input type="text" placeholder="e.g. 500 kg" className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 outline-none" />
                                 </div>
                             </div>
                         </motion.div>
@@ -88,16 +88,16 @@ export default function RFQForm() {
                             className="space-y-6"
                         >
                             <div>
-                                <label className="block text-sm font-semibold text-slate-300 mb-2">Detailed Requirements</label>
-                                <textarea rows={4} placeholder="Describe material specs, packaging needs, etc." className="w-full px-4 py-3 rounded-lg border border-white/10 bg-slate-950 text-white placeholder-slate-500 focus:ring-2 focus:ring-teal-500 outline-none resize-none"></textarea>
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Detailed Requirements</label>
+                                <textarea rows={4} placeholder="Describe material specs, packaging needs, etc." className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 outline-none resize-none"></textarea>
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-slate-300 mb-2">Upload Reference Image (Optional)</label>
-                                <div className="border-2 border-dashed border-white/10 rounded-lg p-8 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors cursor-pointer group">
-                                    <div className="p-3 bg-teal-500/10 text-teal-500 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Upload Reference Image (Optional)</label>
+                                <div className="border-2 border-dashed border-slate-300 rounded-lg p-8 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors cursor-pointer group">
+                                    <div className="p-3 bg-cyan-50 text-cyan-600 rounded-full mb-3 group-hover:scale-110 transition-transform">
                                         <UploadCloud className="h-6 w-6" />
                                     </div>
-                                    <p className="text-sm font-medium text-slate-300">Click to upload or drag and drop</p>
+                                    <p className="text-sm font-medium text-slate-700">Click to upload or drag and drop</p>
                                     <p className="text-xs text-slate-500 mt-1">SVG, PNG, JPG or GIF (max. 5MB)</p>
                                 </div>
                             </div>
@@ -115,32 +115,32 @@ export default function RFQForm() {
                         >
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-semibold text-slate-300 mb-2">Full Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-white/10 bg-slate-950 text-white focus:ring-2 focus:ring-teal-500 outline-none" />
+                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
+                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-cyan-500 outline-none" />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-slate-300 mb-2">Company Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-white/10 bg-slate-950 text-white focus:ring-2 focus:ring-teal-500 outline-none" />
+                                    <label className="block text-sm font-semibold text-slate-700 mb-2">Company Name</label>
+                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-cyan-500 outline-none" />
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-slate-300 mb-2">Business Email</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-lg border border-white/10 bg-slate-950 text-white focus:ring-2 focus:ring-teal-500 outline-none" />
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Business Email</label>
+                                <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-cyan-500 outline-none" />
                             </div>
                             <div className="flex items-center gap-2 mt-4">
-                                <input type="checkbox" id="terms" className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 border-white/20 bg-slate-900" />
-                                <label htmlFor="terms" className="text-sm text-slate-400">I agree to the <span className="text-teal-400 underline">Terms of Service</span></label>
+                                <input type="checkbox" id="terms" className="w-4 h-4 text-cyan-600 rounded focus:ring-cyan-500 border-slate-300 bg-white" />
+                                <label htmlFor="terms" className="text-sm text-slate-600">I agree to the <span className="text-cyan-600 underline">Terms of Service</span></label>
                             </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
 
                 {/* Navigation Buttons */}
-                <div className="flex justify-between items-center mt-10 pt-6 border-t border-white/5">
+                <div className="flex justify-between items-center mt-10 pt-6 border-t border-slate-100">
                     <button
                         onClick={prevStep}
                         disabled={step === 1}
-                        className={`px-6 py-2 rounded-lg font-medium text-slate-400 hover:bg-white/5 transition-colors
+                        className={`px-6 py-2 rounded-lg font-medium text-slate-500 hover:bg-slate-100 transition-colors
                         ${step === 1 ? 'opacity-0 pointer-events-none' : 'opacity-100'}
                     `}
                     >
@@ -150,13 +150,13 @@ export default function RFQForm() {
                     {step < 3 ? (
                         <button
                             onClick={nextStep}
-                            className="px-8 py-3 bg-teal-500 text-white rounded-lg font-bold shadow-lg shadow-teal-500/20 hover:bg-teal-400 hover:shadow-teal-500/30 transition-all flex items-center gap-2"
+                            className="px-8 py-3 bg-cyan-500 text-white rounded-lg font-bold shadow-lg shadow-cyan-500/20 hover:bg-cyan-600 hover:shadow-cyan-500/30 transition-all flex items-center gap-2"
                         >
                             Next Step <ChevronRight className="h-4 w-4" />
                         </button>
                     ) : (
                         <button
-                            className="px-8 py-3 bg-emerald-500 text-white rounded-lg font-bold shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 hover:shadow-emerald-500/30 transition-all flex items-center gap-2"
+                            className="px-8 py-3 bg-emerald-600 text-white rounded-lg font-bold shadow-lg shadow-emerald-500/20 hover:bg-emerald-700 hover:shadow-emerald-500/30 transition-all flex items-center gap-2"
                         >
                             Submit Request <Check className="h-4 w-4" />
                         </button>
