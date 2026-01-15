@@ -15,7 +15,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "bechoHub.com | B2B Marketplace",
+  title: "bechoHub",
   description: "India's leading B2B marketplace for industrial goods.",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased font-sans bg-slate-950 text-slate-50 selection:bg-cyan-400 selection:text-white`}
+        className={`${inter.variable} ${outfit.variable} antialiased font-sans bg-slate-50 text-slate-900 selection:bg-cyan-200 selection:text-cyan-900`}
         suppressHydrationWarning
       >
         {children}
