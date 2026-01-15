@@ -3,46 +3,46 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 
 export default function Login() {
     return (
-        <div className="min-h-screen grid grid-cols-1 md:grid-cols-2">
+        <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 bg-slate-950">
             {/* Left Side - Branding & Testimonial */}
-            <div className="hidden md:flex flex-col justify-between bg-slate-900 p-12 text-white relative overflow-hidden">
+            <div className="hidden md:flex flex-col justify-between bg-slate-950 p-12 text-white relative overflow-hidden border-r border-white/5">
                 {/* Abstract Background Pattern */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute inset-0 opacity-20 pointer-events-none">
                     <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                         <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
                     </svg>
                 </div>
 
                 <div className="relative z-10">
-                    <Link href="/" className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
-                        <ArrowLeft className="h-5 w-5" /> Back to Home
+                    <Link href="/" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
+                        <ArrowLeft className="h-4 w-4" /> Back to Home
                     </Link>
                 </div>
 
-                <div className="relative z-10 space-y-6">
-                    <div className="h-12 w-12 rounded-lg bg-teal-500/20 flex items-center justify-center mb-4 border border-teal-500/30">
-                        <CheckCircle2 className="h-6 w-6 text-teal-400" />
+                <div className="relative z-10 space-y-8">
+                    <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 border border-white/10 backdrop-blur-sm">
+                        <CheckCircle2 className="h-7 w-7 text-white" />
                     </div>
-                    <blockquote className="text-2xl font-medium leading-relaxed">
-                        "B2B Connect has transformed how we source raw materials. The verification process is top-notch, and we've saved 20% on procurement costs."
+                    <blockquote className="text-3xl font-medium leading-tight tracking-tight">
+                        &quot;Becho.com has transformed how we source raw materials. The verification process is top-notch, and we&apos;ve saved 20% on procurement costs.&quot;
                     </blockquote>
                     <div>
                         <p className="font-bold text-lg">Rajesh Kumar</p>
-                        <p className="text-slate-400">Head of Procurement, Textile Dimensions</p>
+                        <p className="text-zinc-400">Head of Procurement, Textile Dimensions</p>
                     </div>
                 </div>
 
-                <div className="relative z-10 text-sm text-slate-500">
-                    &copy; 2024 B2B Connect. All rights reserved.
+                <div className="relative z-10 text-sm text-zinc-500">
+                    &copy; 2024 Becho.com. All rights reserved.
                 </div>
             </div>
 
             {/* Right Side - Login Form */}
-            <div className="flex items-center justify-center p-8 bg-white">
+            <div className="flex items-center justify-center p-8 bg-slate-900">
                 <div className="w-full max-w-md space-y-8">
                     <div className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-slate-900">Welcome back</h2>
-                        <p className="mt-2 text-sm text-gray-500">
+                        <h2 className="text-3xl font-bold tracking-tight text-white font-heading">Welcome back</h2>
+                        <p className="mt-2 text-sm text-slate-400">
                             Please enter your details to sign in
                         </p>
                     </div>
@@ -50,26 +50,26 @@ export default function Login() {
                     <form className="mt-8 space-y-6">
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-slate-700">Email address</label>
+                                <label htmlFor="email" className="block text-sm font-medium text-slate-300">Email address</label>
                                 <input
                                     id="email"
                                     name="email"
                                     type="email"
                                     autoComplete="email"
                                     required
-                                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-slate-900 placeholder-gray-400 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 sm:text-sm"
+                                    className="mt-1 block w-full rounded-md border border-white/10 bg-slate-950 px-3 py-2 text-white placeholder-slate-500 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 sm:text-sm"
                                     placeholder="you@company.com"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="password" className="block text-sm font-medium text-slate-700">Password</label>
+                                <label htmlFor="password" className="block text-sm font-medium text-slate-300">Password</label>
                                 <input
                                     id="password"
                                     name="password"
                                     type="password"
                                     autoComplete="current-password"
                                     required
-                                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-slate-900 placeholder-gray-400 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 sm:text-sm"
+                                    className="mt-1 block w-full rounded-md border border-white/10 bg-slate-950 px-3 py-2 text-white placeholder-slate-500 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 sm:text-sm"
                                     placeholder="••••••••"
                                 />
                             </div>
@@ -81,15 +81,15 @@ export default function Login() {
                                     id="remember-me"
                                     name="remember-me"
                                     type="checkbox"
-                                    className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                    className="h-4 w-4 rounded border-white/20 bg-slate-950 text-teal-500 focus:ring-teal-500"
                                 />
-                                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                                <label htmlFor="remember-me" className="ml-2 block text-sm text-slate-300">
                                     Remember me
                                 </label>
                             </div>
 
                             <div className="text-sm">
-                                <a href="#" className="font-medium text-teal-600 hover:text-teal-500">
+                                <a href="#" className="font-medium text-teal-400 hover:text-teal-300">
                                     Forgot your password?
                                 </a>
                             </div>
@@ -97,24 +97,24 @@ export default function Login() {
 
                         <button
                             type="submit"
-                            className="flex w-full justify-center rounded-md bg-[#008ba3] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#007b91] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 transition-all"
+                            className="flex w-full justify-center rounded-md bg-teal-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 transition-all"
                         >
                             Sign in
                         </button>
 
                         <div className="relative">
                             <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-gray-300" />
+                                <div className="w-full border-t border-white/10" />
                             </div>
                             <div className="relative flex justify-center text-sm">
-                                <span className="bg-white px-2 text-gray-500">Or continue with</span>
+                                <span className="bg-slate-900 px-2 text-slate-500">Or continue with</span>
                             </div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-3">
                             <button
                                 type="button"
-                                className="flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-1"
+                                className="flex w-full items-center justify-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-1 focus:ring-offset-slate-900"
                             >
                                 {/* Google Icon Placeholder */}
                                 <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@ export default function Login() {
                             </button>
                             <button
                                 type="button"
-                                className="flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-1"
+                                className="flex w-full items-center justify-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-1 focus:ring-offset-slate-900"
                             >
                                 {/* LinkedIn Icon Placeholder */}
                                 <svg className="h-5 w-5 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24">
@@ -150,9 +150,9 @@ export default function Login() {
                         </div>
                     </form>
 
-                    <p className="mt-10 text-center text-sm text-gray-500">
-                        Don't have an account?{" "}
-                        <Link href="/signup" className="font-semibold leading-6 text-teal-600 hover:text-teal-500">
+                    <p className="mt-10 text-center text-sm text-slate-500">
+                        Don&apos;t have an account?{" "}
+                        <Link href="/signup" className="font-semibold leading-6 text-teal-400 hover:text-teal-300">
                             Sign up for free
                         </Link>
                     </p>

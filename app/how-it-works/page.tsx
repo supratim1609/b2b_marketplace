@@ -79,7 +79,7 @@ export default function HowItWorksPage() {
     const faqs = [
         {
             id: 1,
-            question: "Is there a fee to join B2B Connect?",
+            question: "Is there a fee to join Becho.com?",
             answer: "Registration is free for both buyers and suppliers. We charge a small transaction fee only when a deal is successfully closed.",
         },
         {
@@ -102,40 +102,42 @@ export default function HowItWorksPage() {
     const steps = activeTab === 'buyer' ? buyerSteps : supplierSteps;
 
     return (
-        <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+        <div className="min-h-screen bg-slate-950 font-sans text-white">
             <Navbar />
 
             <main>
                 {/* Header */}
-                <div className="bg-slate-900 py-24 text-center text-white">
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="bg-slate-950 py-32 text-center text-white relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                         <FadeIn>
-                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
-                                Simplifying B2B Trade
+                            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl mb-8 leading-tight">
+                                Trade with <br /> confidence.
                             </h1>
-                            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-                                Whether you're buying materials or selling products, we make the process transparent, secure, and efficient.
+                            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                                The most secure and efficient way to source from verified Indian manufacturers.
+                                No ambiguity, just business.
                             </p>
                         </FadeIn>
                     </div>
                 </div>
 
                 {/* Toggle & Steps */}
-                <div className="py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-center mb-16">
-                        <div className="bg-white p-1 rounded-full shadow-sm border border-gray-200 inline-flex">
+                <div className="py-32 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="flex justify-center mb-20">
+                        <div className="bg-white/5 p-1.5 rounded-full inline-flex border border-white/10">
                             <button
                                 onClick={() => setActiveTab('buyer')}
-                                className={`px-8 py-3 rounded-full text-sm font-bold transition-all
-                            ${activeTab === 'buyer' ? 'bg-[#008ba3] text-white shadow-md' : 'text-gray-500 hover:text-gray-900'}
+                                className={`px-10 py-3 rounded-full text-sm font-bold transition-all duration-300
+                            ${activeTab === 'buyer' ? 'bg-teal-500 text-white shadow-lg shadow-teal-500/20' : 'text-slate-400 hover:text-white hover:bg-white/5'}
                         `}
                             >
                                 For Buyers
                             </button>
                             <button
                                 onClick={() => setActiveTab('supplier')}
-                                className={`px-8 py-3 rounded-full text-sm font-bold transition-all
-                            ${activeTab === 'supplier' ? 'bg-[#008ba3] text-white shadow-md' : 'text-gray-500 hover:text-gray-900'}
+                                className={`px-10 py-3 rounded-full text-sm font-bold transition-all duration-300
+                            ${activeTab === 'supplier' ? 'bg-teal-500 text-white shadow-lg shadow-teal-500/20' : 'text-slate-400 hover:text-white hover:bg-white/5'}
                         `}
                             >
                                 For Suppliers
@@ -143,15 +145,15 @@ export default function HowItWorksPage() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                         {steps.map((step, index) => (
                             <SlideUp key={step.id} delay={index * 0.1}>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full hover:shadow-lg transition-shadow">
-                                    <div className={`h-14 w-14 rounded-xl flex items-center justify-center mb-6 ${step.color}`}>
-                                        <step.icon className="h-7 w-7" />
+                                <div className="bg-white/5 p-10 rounded-[2rem] shadow-lg shadow-black/20 border border-white/5 h-full hover:shadow-teal-500/10 hover:border-white/10 transition-all duration-500 group">
+                                    <div className={`h-16 w-16 rounded-2xl flex items-center justify-center mb-8 ${step.color.replace('text-', 'bg-opacity-10 text-')}`}>
+                                        <step.icon className="h-8 w-8" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                                    <p className="text-gray-500 leading-relaxed">{step.desc}</p>
+                                    <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
+                                    <p className="text-slate-400 leading-relaxed text-lg">{step.desc}</p>
                                 </div>
                             </SlideUp>
                         ))}
@@ -159,24 +161,24 @@ export default function HowItWorksPage() {
                 </div>
 
                 {/* FAQ Section */}
-                <div className="bg-white py-24 border-t border-gray-100">
+                <div className="bg-slate-900/50 py-32 border-t border-white/5">
                     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold tracking-tight text-slate-900">Frequently Asked Questions</h2>
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl font-bold tracking-tight text-white font-heading">Expert Answers</h2>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             {faqs.map((faq) => (
-                                <div key={faq.id} className="border border-gray-200 rounded-lg overflow-hidden">
+                                <div key={faq.id} className="bg-white/5 border border-white/5 rounded-2xl overflow-hidden shadow-sm hover:bg-white/10 transition-colors">
                                     <button
                                         onClick={() => toggleFaq(faq.id)}
-                                        className="flex w-full items-center justify-between px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors"
+                                        className="flex w-full items-center justify-between px-8 py-6 text-left"
                                     >
-                                        <span className="font-semibold text-slate-900">{faq.question}</span>
-                                        {openFaq === faq.id ? <ChevronUp className="h-5 w-5 text-gray-400" /> : <ChevronDown className="h-5 w-5 text-gray-400" />}
+                                        <span className="font-bold text-white text-lg">{faq.question}</span>
+                                        {openFaq === faq.id ? <ChevronUp className="h-5 w-5 text-slate-400" /> : <ChevronDown className="h-5 w-5 text-slate-400" />}
                                     </button>
                                     {openFaq === faq.id && (
-                                        <div className="px-6 py-4 bg-white border-t border-gray-100 text-gray-600 leading-relaxed">
+                                        <div className="px-8 pb-8 pt-0 text-slate-400 leading-relaxed">
                                             {faq.answer}
                                         </div>
                                     )}
@@ -186,18 +188,15 @@ export default function HowItWorksPage() {
                     </div>
                 </div>
 
-                {/* CTA */}
-                <div className="bg-[#008ba3] py-24 text-center">
+                {/* CTA - Premium Dark */}
+                <div className="bg-slate-950 py-32 text-center text-white">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
-                            Ready to get started?
+                        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-8 font-heading">
+                            Ready to modernize your supply chain?
                         </h2>
-                        <p className="text-teal-100 mb-10 max-w-2xl mx-auto text-lg">
-                            Join thousands of businesses growing with B2B Connect today.
-                        </p>
-                        <div className="flex justify-center gap-4">
-                            <a href="/signup" className="bg-white text-[#008ba3] px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all">
-                                Create Free Account
+                        <div className="flex justify-center gap-6">
+                            <a href="/signup" className="bg-white text-slate-950 px-10 py-4 rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:bg-slate-200 transition-all active:scale-95">
+                                Start Free Account
                             </a>
                         </div>
                     </div>

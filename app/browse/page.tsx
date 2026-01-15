@@ -6,7 +6,7 @@ import { FadeIn, SlideUp, StaggerContainer, StaggerItem } from "../components/An
 
 export default function BrowseSuppliers() {
     return (
-        <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+        <div className="min-h-screen bg-slate-950 font-sans text-white">
             <Navbar />
 
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
@@ -15,14 +15,14 @@ export default function BrowseSuppliers() {
                     {/* Sidebar Filters - Hidden on mobile for now, can add toggle later */}
                     <FadeIn delay={0.1} className="hidden md:block w-64 flex-shrink-0 space-y-8">
                         <div>
-                            <h3 className="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                            <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
                                 <Filter className="h-4 w-4" /> Filters
                             </h3>
 
                             {/* Category Filter */}
-                            <div className="border-t border-gray-200 py-4">
-                                <button className="flex w-full items-center justify-between text-sm text-gray-400 hover:text-gray-500">
-                                    <span className="font-medium text-slate-900">Category</span>
+                            <div className="border-t border-white/10 py-4">
+                                <button className="flex w-full items-center justify-between text-sm text-slate-400 hover:text-slate-300">
+                                    <span className="font-medium text-white">Category</span>
                                     <ChevronDown className="h-4 w-4" />
                                 </button>
                                 <div className="mt-4 space-y-2">
@@ -32,11 +32,11 @@ export default function BrowseSuppliers() {
                                                 id={`filter-${category}`}
                                                 name="category"
                                                 type="checkbox"
-                                                className="h-4 w-4 rounded border-gray-300 text-[#008ba3] focus:ring-teal-500"
+                                                className="h-4 w-4 rounded border-white/20 bg-white/5 text-teal-500 focus:ring-teal-500 focus:ring-offset-slate-950"
                                             />
                                             <label
                                                 htmlFor={`filter-${category}`}
-                                                className="ml-3 text-sm text-gray-600"
+                                                className="ml-3 text-sm text-slate-400"
                                             >
                                                 {category}
                                             </label>
@@ -46,9 +46,9 @@ export default function BrowseSuppliers() {
                             </div>
 
                             {/* Location Filter */}
-                            <div className="border-t border-gray-200 py-4">
-                                <button className="flex w-full items-center justify-between text-sm text-gray-400 hover:text-gray-500">
-                                    <span className="font-medium text-slate-900">Location</span>
+                            <div className="border-t border-white/10 py-4">
+                                <button className="flex w-full items-center justify-between text-sm text-slate-400 hover:text-slate-300">
+                                    <span className="font-medium text-white">Location</span>
                                     <ChevronDown className="h-4 w-4" />
                                 </button>
                                 <div className="mt-4 space-y-2">
@@ -58,11 +58,11 @@ export default function BrowseSuppliers() {
                                                 id={`filter-${loc}`}
                                                 name="location"
                                                 type="checkbox"
-                                                className="h-4 w-4 rounded border-gray-300 text-[#008ba3] focus:ring-teal-500"
+                                                className="h-4 w-4 rounded border-white/20 bg-white/5 text-teal-500 focus:ring-teal-500 focus:ring-offset-slate-950"
                                             />
                                             <label
                                                 htmlFor={`filter-${loc}`}
-                                                className="ml-3 text-sm text-gray-600"
+                                                className="ml-3 text-sm text-slate-400"
                                             >
                                                 {loc}
                                             </label>
@@ -80,17 +80,17 @@ export default function BrowseSuppliers() {
                         <SlideUp delay={0.2} className="mb-6 flex flex-col sm:flex-row gap-4 items-center justify-between">
                             <div className="relative w-full max-w-lg">
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                    <Search className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                    <Search className="h-5 w-5 text-slate-500" aria-hidden="true" />
                                 </div>
                                 <input
                                     type="text"
                                     placeholder="Search suppliers by name, product, or GST..."
-                                    className="block w-full rounded-md border border-gray-200 bg-white py-3 pl-10 pr-3 text-sm placeholder-gray-500 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                                    className="block w-full rounded-md border border-white/10 bg-white/5 py-3 pl-10 pr-3 text-sm text-white placeholder-slate-500 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
                                 />
                             </div>
                             <div className="flex items-center gap-2">
-                                <span className="text-sm text-gray-500">Sort by:</span>
-                                <select className="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-teal-600 sm:text-sm sm:leading-6">
+                                <span className="text-sm text-slate-400">Sort by:</span>
+                                <select className="block w-full rounded-md border-0 bg-slate-900 py-1.5 pl-3 pr-10 text-white ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-teal-600 sm:text-sm sm:leading-6">
                                     <option>Relevance</option>
                                     <option>Rating: High to Low</option>
                                     <option>Newest First</option>

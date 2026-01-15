@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Instagram, ShoppingBag } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-slate-900 text-white" aria-labelledby="footer-heading">
+        <footer className="bg-slate-950 text-white" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
@@ -15,7 +16,7 @@ export default function Footer() {
                         Ready to grow your business?
                     </h2>
                     <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-                        Join thousands of Indian businesses already trading securely on B2B Connect. Sign up is free.
+                        Join thousands of Indian businesses already trading securely on Becho.com. Sign up is free.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Link
@@ -36,12 +37,8 @@ export default function Footer() {
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                     <div className="space-y-8">
                         <div className="flex items-center gap-2">
-                            {/* Simplified logo representation for footer */}
-                            <div className="h-8 w-8 rounded-full bg-[#008ba3] flex items-center justify-center">
-                                <span className="font-bold text-white text-xs">BC</span>
-                            </div>
-                            <span className="text-xl font-bold text-white">
-                                B2B Connect
+                            <span className="text-2xl font-bold tracking-tight text-white font-heading">
+                                becho.com
                             </span>
                         </div>
                         <p className="text-sm leading-6 text-gray-400">
@@ -102,7 +99,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs leading-5 text-gray-400">&copy; 2024 B2B Connect Inc. All rights reserved.</p>
+                    <p className="text-xs leading-5 text-gray-400">&copy; 2024 Becho.com Inc. All rights reserved.</p>
                     <div className="flex gap-6">
                         <Link href="#" className="text-xs leading-5 text-gray-400 hover:text-white">Privacy Policy</Link>
                         <Link href="#" className="text-xs leading-5 text-gray-400 hover:text-white">Terms of Use</Link>

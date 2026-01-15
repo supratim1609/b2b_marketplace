@@ -3,11 +3,14 @@
 import { motion } from "framer-motion";
 import { cn } from "@/app/utils/cn";
 
+// Apple-like smooth spring/ease
+const smoothEase = [0.22, 1, 0.36, 1]; // easeOutQuint-ish
+
 export const FadeIn = ({
     children,
     className,
     delay = 0,
-    duration = 0.5,
+    duration = 0.7, // Slower, more deliberate
 }: {
     children: React.ReactNode;
     className?: string;
@@ -16,10 +19,10 @@ export const FadeIn = ({
 }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }} // Subtle movement
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration, delay, ease: "easeOut" }}
+            transition={{ duration, delay, ease: smoothEase }}
             className={className}
         >
             {children}
@@ -38,10 +41,10 @@ export const SlideUp = ({
 }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay, ease: "circOut" }}
+            transition={{ duration: 0.8, delay, ease: smoothEase }}
             className={className}
         >
             {children}

@@ -18,8 +18,8 @@ export default function Features() {
             description:
                 "Your money is safe. Funds are held in a secure escrow account and only released to the supplier after you confirm product quality.",
             icon: Lock,
-            color: "text-teal-500",
-            bg: "bg-teal-50",
+            color: "text-blue-600",
+            bg: "bg-blue-50",
         },
         {
             name: "End-to-End Logistics",
@@ -32,13 +32,14 @@ export default function Features() {
     ];
 
     return (
-        <div className="bg-slate-50 py-24 sm:py-32 overflow-hidden">
+        <div className="bg-slate-950 py-24 sm:py-32 overflow-hidden relative">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                        Why Choose B2B Connect
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-heading">
+                        Why Choose Becho.com
                     </h2>
-                    <p className="mt-4 text-lg leading-8 text-gray-600">
+                    <p className="mt-4 text-lg leading-8 text-slate-400">
                         Built for speed, clarity, and trust in every B2B transaction.
                     </p>
                 </div>
@@ -47,14 +48,14 @@ export default function Features() {
                     <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                         {features.map((feature) => (
                             <StaggerItem key={feature.name}>
-                                <ScaleOnHover className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                                    <dt className="flex items-center gap-x-3 text-xl font-semibold leading-7 text-slate-900 mb-4">
-                                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg ${feature.bg}`}>
+                                <ScaleOnHover className="flex flex-col h-full bg-white/5 p-8 rounded-2xl shadow-lg shadow-black/20 border border-white/5 hover:bg-white/10 hover:border-white/10  transition-all duration-300">
+                                    <dt className="flex items-center gap-x-3 text-xl font-semibold leading-7 text-white mb-4">
+                                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 border border-white/10`}>
                                             <feature.icon className={`h-6 w-6 ${feature.color}`} aria-hidden="true" />
                                         </div>
                                     </dt>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.name}</h3>
-                                    <dd className="flex flex-auto flex-col text-base leading-7 text-gray-600">
+                                    <h3 className="text-xl font-bold text-white mb-3">{feature.name}</h3>
+                                    <dd className="flex flex-auto flex-col text-base leading-7 text-slate-400">
                                         <p className="flex-auto">{feature.description}</p>
                                     </dd>
                                 </ScaleOnHover>
