@@ -30,7 +30,7 @@ export default function HowItWorks() {
     return (
         <div className="relative py-24 sm:py-32 overflow-hidden bg-slate-50">
             {/* Soft gradient blob */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-[120px] pointer-events-none mix-blend-multiply"></div>
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-[60px] sm:blur-[120px] pointer-events-none mix-blend-multiply"></div>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
 

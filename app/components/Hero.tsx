@@ -12,9 +12,9 @@ export default function Hero() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Aurora Gradients - Vibrant & Deep */}
                 {/* Aurora Gradients - Subtle & Clean for Light Mode */}
-                <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-fuchsia-300/30 rounded-full blur-[100px] pointer-events-none mix-blend-multiply" />
-                <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-cyan-300/30 rounded-full blur-[100px] pointer-events-none mix-blend-multiply" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-300/20 rounded-full blur-[120px] pointer-events-none -z-10" />
+                <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-fuchsia-300/30 rounded-full blur-[60px] sm:blur-[100px] pointer-events-none mix-blend-multiply" />
+                <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-cyan-300/30 rounded-full blur-[60px] sm:blur-[100px] pointer-events-none mix-blend-multiply" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-300/20 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none -z-10" />
 
                 <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center relative z-10">
 
@@ -28,7 +28,7 @@ export default function Hero() {
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
-                            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] font-heading">
+                            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-[1.1] font-heading">
                                 Sourcing made <br className="hidden lg:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-600 to-fuchsia-600">intelligent</span>.
                             </h1>

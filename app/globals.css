@@ -5,9 +5,11 @@
   --foreground: #f8fafc;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* Smooth scrolling only for desktop to avoid mobile performance issues */
+@media (min-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer base {
