@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-    Linkedin,
     Globe,
     Heart,
     ArrowUpRight,
@@ -33,18 +32,11 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-4">
                             <Link
-                                href="#"
-                                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all group group"
-                            >
-                                <Linkedin className="h-4 w-4 text-slate-400 group-hover:text-blue-400 transition-colors" />
-                                <span className="text-xs font-bold text-slate-400 group-hover:text-white transition-colors">Follow growth</span>
-                            </Link>
-                            <Link
                                 href="mailto:hello@bechohub.com"
-                                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all group"
+                                className="flex items-center gap-3 px-6 py-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all group"
                             >
                                 <Mail className="h-4 w-4 text-slate-400 group-hover:text-white transition-colors" />
-                                <span className="text-xs font-bold text-slate-400 group-hover:text-white transition-colors">Contact</span>
+                                <span className="text-xs font-bold text-slate-400 group-hover:text-white transition-colors">Contact Support</span>
                             </Link>
                         </div>
                     </div>
