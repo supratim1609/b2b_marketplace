@@ -66,17 +66,17 @@ function SignUpForm() {
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
             </div>
 
-            {/* Header / Navigation */}
-            <header className="p-6 md:p-10 flex justify-between items-center transition-opacity duration-500">
-                <Link href="/" className="text-2xl font-black tracking-tighter hover:opacity-80 transition-opacity">
+            {/* Header / Navigation - Fixed on mobile for consistent UX */}
+            <header className="sticky top-0 z-50 w-full p-6 md:p-10 flex justify-between items-center transition-opacity duration-500 bg-slate-950/80 backdrop-blur-xl md:bg-transparent">
+                <Link href="/" className="text-xl md:text-2xl font-black tracking-tighter hover:opacity-80 transition-opacity">
                     bechoHub
                 </Link>
                 {step <= totalSteps && (
-                    <div className="flex gap-2">
+                    <div className="flex gap-1.5 md:gap-2">
                         {Array.from({ length: totalSteps }).map((_, i) => (
                             <div
                                 key={i}
-                                className={`h-1.5 rounded-full transition-all duration-500 ${i + 1 <= step ? 'w-8 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]' : 'w-2 bg-white/10'
+                                className={`h-1 md:h-1.5 rounded-full transition-all duration-500 ${i + 1 <= step ? 'w-6 md:w-8 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]' : 'w-1.5 md:w-2 bg-white/10'
                                     }`}
                             />
                         ))}
@@ -132,10 +132,10 @@ function SignUpForm() {
                             exit={{ opacity: 0, x: -20 }}
                             className="w-full max-w-md"
                         >
-                            <button onClick={prevStep} className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-8 text-sm font-bold uppercase tracking-widest">
+                            <button onClick={prevStep} className="inline-flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-6 md:mb-8 text-xs md:text-sm font-bold uppercase tracking-widest py-2">
                                 <ChevronLeft className="h-4 w-4" /> Go Back
                             </button>
-                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">Identity <br /><span className="text-cyan-400">Details.</span></h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tightest mb-6 md:mb-8 uppercase">Identity <br /><span className="text-cyan-400">Details.</span></h2>
 
                             <div className="space-y-6">
                                 <div className="space-y-2">

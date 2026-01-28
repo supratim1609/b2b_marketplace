@@ -10,7 +10,7 @@ export const FadeIn = ({
     children,
     className,
     delay = 0,
-    duration = 0.7, // Slower, more deliberate
+    duration = 0.4, // Faster for responsive feel
 }: {
     children: React.ReactNode;
     className?: string;

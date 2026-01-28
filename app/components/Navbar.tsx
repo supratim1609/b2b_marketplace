@@ -103,10 +103,11 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl md:hidden flex flex-col pt-24 px-8"
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-40 bg-white md:hidden flex flex-col pt-24 px-8"
           >
             <div className="space-y-6">
               {navLinks.map((link) => (
@@ -115,18 +116,18 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "block text-3xl font-bold tracking-tight transition-colors",
-                    isActive(link.href) ? "text-slate-900" : "text-slate-400"
+                    "block text-4xl font-black tracking-tightest transition-all active:scale-95",
+                    isActive(link.href) ? "text-slate-900" : "text-slate-300"
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="h-px bg-slate-100 my-8" />
+              <div className="h-px bg-slate-100 my-10" />
               <Link
                 href="/rfq"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center rounded-full bg-slate-900 px-4 py-4 text-lg font-bold text-white shadow-xl shadow-slate-200 transition-all active:scale-95"
+                className="block w-full text-center rounded-2xl bg-slate-900 px-4 py-5 text-xl font-bold text-white shadow-2xl shadow-slate-200 transition-all active:scale-95"
               >
                 Post RFQ
               </Link>

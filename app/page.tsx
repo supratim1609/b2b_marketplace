@@ -73,36 +73,35 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed inset-0 z-40 bg-white flex flex-col pt-24 px-8 md:hidden"
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-10">
                 <Link
-                  href="#onboarding"
+                  href="/signup"
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-4xl font-bold text-slate-900 tracking-tight"
+                  className="text-5xl font-black text-slate-900 tracking-tightest leading-tight"
                 >
                   Get Started
                 </Link>
-                <div className="h-px bg-slate-100 mt-4" />
-                <div className="flex gap-6 mt-4">
-                  <div className="flex-1 p-6 bg-slate-50 rounded-3xl">
+                <div className="h-px bg-slate-100" />
+                <div className="grid grid-cols-1 gap-4">
+                  <Link href="/signup?type=buyer" onClick={() => setIsMenuOpen(false)} className="p-6 bg-slate-50 rounded-[32px] group active:scale-95 transition-all">
                     <Users2 className="h-6 w-6 text-cyan-600 mb-4" />
-                    <h4 className="font-bold mb-2">Buyers</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">Source from verified Indian factories.</p>
-                  </div>
-                  <div className="flex-1 p-6 bg-slate-50 rounded-3xl">
+                    <h4 className="font-bold text-lg mb-1">Buyers</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed uppercase font-bold tracking-widest">Register as Buyer</p>
+                  </Link>
+                  <Link href="/signup?type=supplier" onClick={() => setIsMenuOpen(false)} className="p-6 bg-slate-50 rounded-[32px] group active:scale-95 transition-all">
                     <Building2 className="h-6 w-6 text-indigo-600 mb-4" />
-                    <h4 className="font-bold mb-2">Sellers</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">Expose your capacity to global buyers.</p>
-                  </div>
+                    <h4 className="font-bold text-lg mb-1">Sellers</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed uppercase font-bold tracking-widest">Join as Seller</p>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -115,8 +114,8 @@ export default function Home() {
         <section className="relative pt-12 pb-16 sm:pt-24 sm:pb-20 md:pt-32 md:pb-24 px-6 overflow-hidden">
           <div className="max-w-7xl mx-auto text-center relative">
             <FadeIn>
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[110px] font-black tracking-tightest leading-[0.9] sm:leading-[0.85] mb-8 sm:mb-12 font-heading text-slate-900">
-                The Future of <br />
+              <h1 className="text-[42px] sm:text-7xl md:text-8xl lg:text-[110px] font-black tracking-tightest leading-[1] sm:leading-[0.85] mb-8 sm:mb-12 font-heading text-slate-900">
+                The Future of <br className="sm:hidden" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600">Indian B2B.</span>
               </h1>
 
@@ -207,8 +206,8 @@ export default function Home() {
                 <Users2 className="h-12 w-12 sm:h-14 sm:w-14 text-cyan-400 mb-6 sm:mb-8" />
                 <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 tracking-tight">Access as Buyer</h3>
                 <p className="text-slate-400 text-base sm:text-lg mb-8 sm:mb-12 font-light leading-relaxed">Secure your supply chain with the next generation of verified Indian manufacturers.</p>
-                <div className="inline-flex items-center text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-cyan-400 gap-2">
-                  Apply for Beta <ChevronRight className="h-4 w-4" />
+                <div className="inline-flex items-center text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-cyan-400 gap-2 group-hover:gap-3 transition-all">
+                  Register as Buyer <ChevronRight className="h-4 w-4" />
                 </div>
               </Link>
             </FadeIn>
@@ -221,8 +220,8 @@ export default function Home() {
                 <Building2 className="h-12 w-12 sm:h-14 sm:w-14 text-indigo-400 mb-6 sm:mb-8" />
                 <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 tracking-tight">Scale as Seller</h3>
                 <p className="text-slate-400 text-base sm:text-lg mb-8 sm:mb-12 font-light leading-relaxed">Get your manufacturing capacity verified and reach high-intent global buyers.</p>
-                <div className="inline-flex items-center text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-indigo-400 gap-2">
-                  List Capacity <ChevronRight className="h-4 w-4" />
+                <div className="inline-flex items-center text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-indigo-400 gap-2 group-hover:gap-3 transition-all">
+                  Join as Seller <ChevronRight className="h-4 w-4" />
                 </div>
               </Link>
             </FadeIn>
