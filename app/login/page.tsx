@@ -24,7 +24,7 @@ export default function Login() {
                         <CheckCircle2 className="h-7 w-7 text-cyan-500" />
                     </div>
                     <blockquote className="text-3xl font-medium leading-tight tracking-tight text-slate-900">
-                        &quot;bechoHub.com has transformed how we source raw materials. The verification process is top-notch, and we&apos;ve saved 20% on procurement costs.&quot;
+                        &quot;bechoHub has transformed how we source raw materials. The verification process is top-notch, and we&apos;ve saved 20% on procurement costs.&quot;
                     </blockquote>
                     <div>
                         <p className="font-bold text-lg text-slate-900">Rajesh Kumar</p>
@@ -33,7 +33,7 @@ export default function Login() {
                 </div>
 
                 <div className="relative z-10 text-sm text-slate-400">
-                    &copy; 2024 Becho.com. All rights reserved.
+                    &copy; 2024 bechoHub. All rights reserved.
                 </div>
             </div>
 

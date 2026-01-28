@@ -7,38 +7,38 @@ import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover } from "./Animators
 export default function RecentBuys() {
     const requirements = [
         {
-            title: "Bulk Cotton Fabric Rolls",
-            qty: "2000 Meters",
-            location: "Surat, Gujarat",
-            time: "2h ago",
-            tags: ["Textiles"],
+            title: "Industrial Grade Solar Panels (330W+)",
+            qty: "1500 Units",
+            location: "Pune, Maharashtra",
+            time: "1h ago",
+            tags: ["Energy"],
             tagColor: "bg-orange-100 text-orange-700",
             id: 1,
         },
         {
-            title: "PCB Boards (Custom Design)",
-            qty: "500 Units",
-            location: "Bangalore, Karnataka",
-            time: "4h ago",
-            tags: ["Electronics"],
+            title: "Medical Grade Latex Gloves (Powder-free)",
+            qty: "50,000 Pairs",
+            location: "Chennai, Tamil Nadu",
+            time: "3h ago",
+            tags: ["Healthcare"],
             tagColor: "bg-blue-100 text-blue-700",
             id: 2,
         },
         {
-            title: "Organic Spices (Export Quality)",
-            qty: "100 kg",
-            location: "Kochi, Kerala",
+            title: "Basmati Rice (Grade A, Long Grain)",
+            qty: "20 Metric Tons",
+            location: "Amritsar, Punjab",
             time: "5h ago",
-            tags: ["Agriculture"],
+            tags: ["Food & Agri"],
             tagColor: "bg-green-100 text-green-700",
             id: 3,
         },
         {
-            title: "Steel Bearings (Series 6000)",
-            qty: "1000 Pcs",
-            location: "Ludhiana, Punjab",
-            time: "6h ago",
-            tags: ["Industrial"],
+            title: "Casting Iron Spare Parts (Custom)",
+            qty: "2500 Pcs",
+            location: "Rajkot, Gujarat",
+            time: "8h ago",
+            tags: ["Manufacturing"],
             tagColor: "bg-slate-100 text-slate-700",
             id: 4,
         },
@@ -54,8 +54,8 @@ export default function RecentBuys() {
                 <div className="flex flex-col sm:flex-row items-center justify-between mb-12">
                     <div className="text-center sm:text-left mb-8 sm:mb-0">
                         <FadeIn>
-                            <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-2 font-heading">Live Market Demands</h2>
-                            <p className="text-slate-600 text-lg">Real-time requirements from verified buyers.</p>
+                            <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-2 font-heading">Verified Market Demands</h2>
+                            <p className="text-slate-600 text-lg">Real-time requirements from GST-registered buyers.</p>
                         </FadeIn>
                     </div>
                     <Link href="#" className="hidden sm:inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 transition-all">

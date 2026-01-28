@@ -47,7 +47,7 @@ export default function Navbar() {
           <div className="flex items-center flex-shrink-0">
             <Link href="/" className="flex items-center gap-2">
               <span className="text-2xl font-bold tracking-tight text-slate-900 font-heading">
-                bechoHub.com
+                bechoHub
               </span>
             </Link>
           </div>

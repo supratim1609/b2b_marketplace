@@ -10,19 +10,19 @@ export default function HowItWorks() {
         {
             id: 1,
             title: "Post Your Requirement",
-            description: "Create a detailed range of buying requests. bechoHub.com's AI helps you specify grades, quantities, and delivery terms.",
+            description: "Quickly post your buying needs. Our intelligent system helps you specify technical grades, quantities, and delivery terms.",
             icon: FileText,
         },
         {
             id: 2,
             title: "Get Verified Quotes",
-            description: "Receive competitive quotes from GST-verified suppliers within 24 hours. Compare prices and supplier ratings.",
+            description: "Receive competitive quotes from pre-vetted, GST-registered suppliers. Compare prices, ratings, and past performance.",
             icon: UserCheck,
         },
         {
             id: 3,
-            title: "Secure Payment & Delivery",
-            description: "Pay via vibrant bechoHub.com Escrow. Funds are released only after you approve the goods. End-to-end tracking included.",
+            title: "Secure Fulfillment",
+            description: "Pay via bechoHub Escrow. Funds are only released after you inspect and approve the goods. End-to-end logistics included.",
             icon: ShieldCheck,
         },
     ];
@@ -87,7 +87,7 @@ export default function HowItWorks() {
                                 {/* Placeholder for dashboard image if actual image is missing/dark */}
                                 <Image
                                     src="/dashboard-mockup.png"
-                                    alt="Becho.com Dashboard Interface"
+                                    alt="bechoHub Dashboard Interface"
                                     width={800}
                                     height={600}
                                     className="w-full rounded-lg shadow-inner"

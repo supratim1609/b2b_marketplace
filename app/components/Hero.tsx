@@ -23,42 +23,40 @@ export default function Hero() {
                         <FadeIn delay={0.1}>
                             <div className="inline-flex items-center rounded-full bg-slate-50 border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600 mb-8 tracking-wide uppercase">
                                 <span className="flex h-1.5 w-1.5 rounded-full bg-cyan-500 mr-2 shadow-[0_0_8px_rgba(6,182,212,0.5)]"></span>
-                                Trusted by 10,000+ Enterprises
+                                India's Premiere B2B Network
                             </div>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
                             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-[1.1] font-heading">
                                 Sourcing made <br className="hidden lg:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-600 to-fuchsia-600">intelligent</span>.
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-600 to-fuchsia-600">frictionless</span>.
                             </h1>
                         </FadeIn>
 
                         <FadeIn delay={0.3}>
                             <p className="mt-8 text-lg text-slate-600 sm:text-lg md:mt-8 md:text-xl leading-relaxed lg:mx-0 font-light">
-                                Connect with verified Indian manufacturers.
-                                Secure payments, transparent pricing, and seamless logistics
-                                for the modern enterprise.
+                                The all-in-one platform for buyers to source smarter and suppliers to grow faster.
+                                Verified businesses, secure payments, and end-to-end logistics.
                             </p>
                         </FadeIn>
 
                         <SlideUp delay={0.4} className="mt-10 sm:mx-auto sm:max-w-lg sm:flex sm:justify-center lg:mx-0 lg:justify-start gap-4">
                             <div className="w-full sm:w-auto">
                                 <Link
-                                    href="/rfq"
-                                    className="group flex w-full items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-base font-semibold text-white shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:scale-[1.02] transition-all duration-300 active:scale-95 border border-transparent hover:border-white/20"
+                                    href="/signup?type=buyer"
+                                    className="group flex w-full items-center justify-center rounded-full bg-slate-900 px-8 py-4 text-base font-semibold text-white shadow-xl hover:bg-slate-800 hover:scale-[1.02] transition-all duration-300 active:scale-95"
                                 >
-                                    Post Request
+                                    Join as Buyer
                                     <ArrowRight className="ml-2 h-4 w-4 opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all text-white" />
                                 </Link>
                             </div>
                             <div className="mt-4 sm:mt-0 w-full sm:w-auto">
                                 <Link
-                                    href="/browse"
-                                    className="flex w-full items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-900 shadow-sm hover:bg-slate-50 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all duration-300 active:scale-95"
+                                    href="/signup?type=supplier"
+                                    className="flex w-full items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-900 shadow-sm hover:bg-slate-50 transition-all duration-300 active:scale-95"
                                 >
-                                    <LayoutGrid className="mr-2 h-4 w-4 text-slate-400 group-hover:text-blue-500 transition-colors" />
-                                    Browse Suppliers
+                                    Register as Seller
                                 </Link>
                             </div>
                         </SlideUp>
@@ -106,13 +104,13 @@ export default function Hero() {
                                 <div className="flex justify-between items-start mb-3">
                                     <div className="flex items-center gap-2">
                                         <span className="flex h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></span>
-                                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Live RFQ</span>
+                                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Active Order</span>
                                     </div>
-                                    <span className="text-[10px] text-slate-400 font-mono">2m ago</span>
+                                    <span className="text-[10px] text-slate-400 font-mono">Today</span>
                                 </div>
-                                <p className="font-semibold text-slate-900 text-sm mb-1 leading-snug">Cotton Yarn (Combed, 40s)</p>
+                                <p className="font-semibold text-slate-900 text-sm mb-1 leading-snug">Precision Gears (Steel C45)</p>
                                 <div className="flex justify-between items-end mt-2">
-                                    <p className="text-xs text-slate-500 font-medium">500 kg • Ahmedabad</p>
+                                    <p className="text-xs text-slate-500 font-medium">10,000 Pcs • Pune Hub</p>
                                     <div className="h-6 w-6 rounded-full bg-slate-100 flex items-center justify-center">
                                         <ArrowRight className="h-3 w-3 text-slate-600" />
                                     </div>

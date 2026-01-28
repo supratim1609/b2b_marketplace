@@ -90,7 +90,7 @@ export default function HowItWorksPage() {
                     <div className="mx-auto max-w-4xl text-center relative z-10">
                         <FadeIn>
                             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl mb-6 font-heading">
-                                How <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-fuchsia-600">bechoHub.com</span> Works
+                                How <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-fuchsia-600">bechoHub</span> Works
                             </h1>
                             <p className="text-lg leading-8 text-slate-600 max-w-2xl mx-auto">
                                 From request to delivery, we've streamlined every step of the sourcing process.
@@ -160,7 +160,7 @@ export default function HowItWorksPage() {
                             <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Frequently Asked Questions</h2>
                             <div className="space-y-4">
                                 {[
-                                    { q: "Is it free to join?", a: "Yes, joining bechoHub.com is completely free for both suppliers and buyers. We only charge a small transaction fee upon successful deals." },
+                                    { q: "Is it free to join?", a: "Yes, joining bechoHub is completely free for both suppliers and buyers. We only charge a small transaction fee upon successful deals." },
                                     { q: "How are suppliers verified?", a: "We conduct a rigorous 3-step verification process verifying GST, factory audits, and past performance records." },
                                     { q: "Is my payment secure?", a: "Absolutely. We use an escrow system where funds are only released to the supplier after you verify the goods." }
                                 ].map((faq, i) => (
@@ -181,7 +181,7 @@ export default function HowItWorksPage() {
                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/40 to-blue-900/40 opacity-50"></div>
                             <div className="relative z-10">
                                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Ready to transform your sourcing?</h2>
-                                <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">Join thousands of businesses already using bechoHub.com to source smarter.</p>
+                                <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">Join thousands of businesses already using bechoHub to source smarter.</p>
                                 <button className="px-8 py-3.5 bg-white text-slate-900 rounded-full font-bold hover:bg-cyan-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                                     Get Started Now
                                 </button>

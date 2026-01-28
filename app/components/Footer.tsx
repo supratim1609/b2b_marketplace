@@ -15,7 +15,7 @@ export default function Footer() {
                         Ready to grow your business?
                     </h2>
                     <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-                        Join thousands of Indian businesses already trading securely on Becho.com. Sign up is free.
+                        Join thousands of Indian businesses already trading securely on bechoHub. Sign up is free.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Link
@@ -37,7 +37,7 @@ export default function Footer() {
                     <div className="space-y-8">
                         <div className="flex items-center gap-2">
                             <Link href="/" className="text-2xl font-bold text-slate-900 font-heading">
-                                bechoHub.com
+                                bechoHub
                             </Link>
                         </div>
                         <p className="text-sm leading-6 text-slate-500">
@@ -98,7 +98,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="mt-16 border-t border-slate-200 pt-8 sm:mt-20 lg:mt-24 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs leading-5 text-slate-500">&copy; 2024 Becho.com Inc. All rights reserved.</p>
+                    <p className="text-xs leading-5 text-slate-500">&copy; 2025 bechoHub. All rights reserved.</p>
                     <div className="flex gap-6">
                         <Link href="#" className="text-xs leading-5 text-slate-500 hover:text-slate-900 transition-colors">Privacy Policy</Link>
                         <Link href="#" className="text-xs leading-5 text-slate-500 hover:text-slate-900 transition-colors">Terms of Use</Link>

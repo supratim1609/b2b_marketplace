@@ -4,8 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Factory, ShoppingBag } from "lucide-react";
 
+import { useSearchParams } from "next/navigation";
+
 export default function SignUp() {
-    const [userType, setUserType] = useState<'buyer' | 'supplier'>('buyer');
+    const searchParams = useSearchParams();
+    const type = searchParams.get('type') as 'buyer' | 'supplier' | null;
+    const [userType, setUserType] = useState<'buyer' | 'supplier'>(type || 'buyer');
 
     return (
         <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 bg-slate-50">
@@ -30,7 +34,7 @@ export default function SignUp() {
                         <CheckCircle2 className="h-7 w-7 text-cyan-500" />
                     </div>
                     <blockquote className="text-3xl font-medium leading-tight tracking-tight text-slate-900">
-                        &quot;Finding reliable suppliers used to take weeks. With bechoHub.com, we posted an RFQ and closed the deal in 3 days.&quot;
+                        &quot;Finding reliable suppliers used to take weeks. With bechoHub, we posted an RFQ and closed the deal in 3 days.&quot;
                     </blockquote>
                     <div>
                         <p className="font-bold text-lg text-slate-900">Anita Desai</p>
@@ -39,7 +43,7 @@ export default function SignUp() {
                 </div>
 
                 <div className="relative z-10 text-sm text-slate-400">
-                    &copy; 2024 Becho.com. All rights reserved.
+                    &copy; 2024 bechoHub. All rights reserved.
                 </div>
             </div>
 

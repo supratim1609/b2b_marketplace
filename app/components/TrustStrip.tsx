@@ -11,27 +11,27 @@ export default function TrustStrip() {
 
                     <div className="flex items-center gap-2 font-bold text-xl text-slate-400">
                         <div className="bg-slate-700 rounded-full h-8 w-8"></div>
-                        AcmeCorp
+                        BharatSteel
                     </div>
 
                     <div className="flex items-center gap-2 font-bold text-xl text-slate-400">
                         <Hexagon className="h-8 w-8 text-slate-500 fill-current" />
-                        LogiTech
+                        IndoLogix
                     </div>
 
                     <div className="flex items-center gap-2 font-bold text-xl text-slate-400">
                         <Globe2 className="h-8 w-8 text-slate-500" />
-                        GlobalTrade
+                        AeroForge
                     </div>
 
                     <div className="flex items-center gap-2 font-bold text-xl text-slate-400">
                         <Box className="h-8 w-8 text-slate-500" />
-                        IndoFab
+                        EcoPack
                     </div>
 
                     <div className="flex items-center gap-2 font-bold text-xl text-slate-400">
                         <ShieldCheck className="h-8 w-8 text-slate-500" />
-                        SecurePay
+                        SecureFlow
                     </div>
 
                 </div>
