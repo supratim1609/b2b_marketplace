@@ -110,6 +110,77 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* Comparison Section - High Impact */}
+        <section className="py-32 px-6 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <FadeIn>
+              <div className="text-center mb-24">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tightest uppercase mb-6 text-slate-950">Why bechoHub?</h2>
+                <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">
+                  A complete infrastructure rewrite of the Indian manufacturing ecosystem.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 relative">
+                {/* Vertical Divider for Desktop */}
+                <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-slate-100 -translate-x-1/2" />
+
+                {/* Traditional Side */}
+                <div className="space-y-12">
+                  <div className="flex items-center gap-4 mb-12">
+                    <div className="h-2 w-12 bg-slate-200 rounded-full" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Traditional Marketplaces</span>
+                  </div>
+
+                  <div className="space-y-10">
+                    <div className="group">
+                      <h4 className="text-xl font-bold text-slate-400 mb-3 group-hover:text-slate-950 transition-colors">Fragmented Search</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Endless scrolling through unverified listings with zero data on actual factory capacity.</p>
+                    </div>
+                    <div className="group">
+                      <h4 className="text-xl font-bold text-slate-400 mb-3 group-hover:text-slate-950 transition-colors">Hidden Intermediaries</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Multiple layers of traders inflating costs without adding manufacturing value.</p>
+                    </div>
+                    <div className="group">
+                      <h4 className="text-xl font-bold text-slate-400 mb-3 group-hover:text-slate-950 transition-colors">Manual QC & Risk</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Verification is purely manual, prone to error, and payments are often unprotected.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* bechoHub Side */}
+                <div className="space-y-12">
+                  <div className="flex items-center gap-4 mb-12">
+                    <div className="h-2 w-12 bg-cyan-500 rounded-full" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-600">The bechoHub Advantage</span>
+                  </div>
+
+                  <div className="space-y-10">
+                    <div className="group">
+                      <h4 className="text-xl font-black text-slate-950 mb-3 flex items-center gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-cyan-600" /> Real-time Capacity
+                      </h4>
+                      <p className="text-slate-500 text-sm leading-relaxed font-light">Direct visibility into live assembly lines and verified production benchmarks.</p>
+                    </div>
+                    <div className="group">
+                      <h4 className="text-xl font-black text-slate-950 mb-3 flex items-center gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-cyan-600" /> Direct-to-Factory
+                      </h4>
+                      <p className="text-slate-500 text-sm leading-relaxed font-light">Eliminate middlemen. Our protocol connects you straight to the factory floor floor for primary pricing.</p>
+                    </div>
+                    <div className="group">
+                      <h4 className="text-xl font-black text-slate-950 mb-3 flex items-center gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-cyan-600" /> Automated Trust
+                      </h4>
+                      <p className="text-slate-500 text-sm leading-relaxed font-light">Smart-escrow and IoT-enabled quality tracking built into every production cycle.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
         {/* Final CTA - Ultra Minimal */}
         <section className="pt-32 pb-32 px-6">
           <FadeIn>

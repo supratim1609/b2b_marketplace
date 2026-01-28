@@ -48,23 +48,18 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Just Get Started */}
+          {/* Desktop Navigation - Removed Get Started for minimalism */}
           <div className="hidden md:flex items-center z-50">
-            <Link
-              href="/signup"
-              className="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-3 text-sm font-bold text-white shadow-xl shadow-slate-200 hover:bg-slate-800 transition-all active:scale-95"
-            >
-              Get Started
-            </Link>
+            {/* Empty for now to maintain layout or can be removed if not needed */}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Also simplified */}
           <div className="flex md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-slate-900 p-2"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
