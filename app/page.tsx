@@ -30,27 +30,27 @@ export default function Home() {
 
       <main>
         {/* Hero Section - Clean Light */}
-        <section className="relative pt-40 pb-20 sm:pt-64 sm:pb-32 px-6 overflow-hidden">
+        <section className="relative pt-48 pb-20 sm:pt-64 sm:pb-32 px-6 overflow-hidden">
           {/* Ambient Backgrounds - Lightened */}
           <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-50/50 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-50/50 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <FadeIn>
-              <h1 className="text-[44px] sm:text-7xl md:text-8xl lg:text-[120px] font-black tracking-tightest leading-[1] sm:leading-[0.85] mb-10 font-heading text-slate-950">
-                The Future of <br />
+              <h1 className="text-[40px] sm:text-7xl md:text-8xl lg:text-[120px] font-black tracking-tightest leading-[1.1] sm:leading-[0.85] mb-10 font-heading text-slate-950">
+                The Future of <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-700">Indian B2B.</span>
               </h1>
 
-              <p className="text-lg sm:text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+              <p className="text-base sm:text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto mb-16 font-light leading-relaxed px-4 md:px-0">
                 Connect directly with the next generation of verified manufacturers.
                 Full-stack infrastructure built for global scale.
               </p>
 
-              <div className="flex justify-center mb-24">
+              <div className="flex justify-center mb-24 px-4">
                 <Link
                   href="/signup"
-                  className="group px-16 py-6 bg-slate-950 text-white rounded-full font-black text-sm uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-3"
+                  className="group w-full sm:w-auto px-12 sm:px-16 py-5 sm:py-6 bg-slate-950 text-white rounded-full font-black text-xs sm:text-sm uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-3"
                 >
                   Get Started <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -103,7 +103,7 @@ export default function Home() {
         </section>
 
         {/* Comparison Section - High Impact */}
-        <section className="py-32 px-6 bg-white overflow-hidden">
+        <section className="py-20 md:py-32 px-6 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <FadeIn>
               <div className="text-center mb-24">
@@ -174,9 +174,9 @@ export default function Home() {
         </section>
 
         {/* Final CTA - Ultra Minimal */}
-        <section className="pt-32 pb-32 px-6">
+        <section className="py-20 md:pt-32 md:pb-32 px-6">
           <FadeIn>
-            <div className="max-w-6xl mx-auto p-12 md:p-32 rounded-[64px] bg-slate-950 text-white text-center relative overflow-hidden">
+            <div className="max-w-6xl mx-auto px-6 py-20 md:p-32 rounded-[32px] md:rounded-[64px] bg-slate-950 text-white text-center relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none" />
               <h2 className="text-4xl md:text-9xl font-black tracking-tightest uppercase mb-12 leading-[0.8]">Build the <br /> Future.</h2>
               <div className="flex justify-center">

@@ -25,14 +25,14 @@ export default function AboutPage() {
                     </FadeIn>
 
                     <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
-                        <StaggerItem className="p-12 rounded-[48px] bg-white/[0.03] border border-white/5">
+                        <StaggerItem className="p-8 md:p-12 rounded-[32px] md:rounded-[48px] bg-white/[0.03] border border-white/5">
                             <Zap className="h-12 w-12 text-cyan-400 mb-8" />
                             <h2 className="text-3xl font-bold mb-6 tracking-tight">The Vision.</h2>
                             <p className="text-slate-400 leading-relaxed text-lg font-light">
                                 For too long, Indian manufacturers have been limited by local networks. We are breaking those boundaries by providing a hyper-verified, high-speed digital bridge to high-intent buyers globally and domestically.
                             </p>
                         </StaggerItem>
-                        <StaggerItem className="p-12 rounded-[48px] bg-white/[0.03] border border-white/5">
+                        <StaggerItem className="p-8 md:p-12 rounded-[32px] md:rounded-[48px] bg-white/[0.03] border border-white/5">
                             <Globe className="h-12 w-12 text-indigo-400 mb-8" />
                             <h2 className="text-3xl font-bold mb-6 tracking-tight">The Ecosystem.</h2>
                             <p className="text-slate-400 leading-relaxed text-lg font-light">
@@ -42,7 +42,7 @@ export default function AboutPage() {
                     </StaggerContainer>
 
                     <FadeIn>
-                        <div className="bg-gradient-to-br from-cyan-500/10 to-indigo-500/10 rounded-[64px] p-12 md:p-24 border border-white/5 relative overflow-hidden text-center">
+                        <div className="bg-gradient-to-br from-cyan-500/10 to-indigo-500/10 rounded-[32px] md:rounded-[64px] px-6 py-16 md:p-24 border border-white/5 relative overflow-hidden text-center">
                             <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none" />
                             <h2 className="text-4xl md:text-6xl font-black tracking-tightest uppercase mb-12 relative z-10">Built by <span className="text-cyan-400">Builders.</span></h2>
 

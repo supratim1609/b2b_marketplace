@@ -17,7 +17,7 @@ export default function RFQForm() {
     ];
 
     return (
-        <div className="bg-white/[0.03] backdrop-blur-3xl rounded-[48px] border border-white/5 overflow-hidden shadow-2xl">
+        <div className="bg-white/[0.03] backdrop-blur-3xl rounded-[32px] md:rounded-[48px] border border-white/5 overflow-hidden shadow-2xl">
             {/* Progress Bar */}
             <div className="px-8 py-6 border-b border-white/5 bg-white/[0.02]">
                 <div className="flex items-center justify-between max-w-sm mx-auto">
@@ -39,7 +39,7 @@ export default function RFQForm() {
             </div>
 
             {/* Form Content */}
-            <div className="p-8 md:p-12">
+            <div className="p-6 md:p-12">
                 <AnimatePresence mode="wait">
                     {step === 1 && (
                         <motion.div
@@ -89,7 +89,7 @@ export default function RFQForm() {
                             </div>
                             <div className="space-y-4">
                                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">Attachments</label>
-                                <div className="border-2 border-dashed border-white/10 rounded-[32px] p-10 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-all cursor-pointer group">
+                                <div className="border-2 border-dashed border-white/10 rounded-2xl md:rounded-[32px] p-6 md:p-10 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-all cursor-pointer group">
                                     <div className="p-4 bg-cyan-500/10 text-cyan-400 rounded-2xl mb-4 group-hover:scale-110 transition-transform border border-cyan-500/20">
                                         <UploadCloud className="h-6 w-6" />
                                     </div>

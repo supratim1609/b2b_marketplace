@@ -102,7 +102,7 @@ function SignUpForm() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4">
                                 <button
                                     onClick={() => { setUserType('buyer'); setTimeout(nextStep, 150); }}
-                                    className="group p-10 rounded-[40px] border border-slate-100 bg-white hover:border-cyan-200 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all text-left relative overflow-hidden active:scale-[0.97]"
+                                    className="group p-6 md:p-10 rounded-[32px] md:rounded-[40px] border border-slate-100 bg-white hover:border-cyan-200 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all text-left relative overflow-hidden active:scale-[0.97]"
                                 >
                                     <div className="h-14 w-14 rounded-2xl bg-cyan-50 flex items-center justify-center mb-8 border border-cyan-100 transition-colors group-hover:bg-cyan-100">
                                         <ShoppingBag className="h-7 w-7 text-cyan-600" />
@@ -116,7 +116,7 @@ function SignUpForm() {
 
                                 <button
                                     onClick={() => { setUserType('supplier'); setTimeout(nextStep, 150); }}
-                                    className="group p-10 rounded-[40px] border border-slate-100 bg-white hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all text-left relative overflow-hidden active:scale-[0.97]"
+                                    className="group p-6 md:p-10 rounded-[32px] md:rounded-[40px] border border-slate-100 bg-white hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all text-left relative overflow-hidden active:scale-[0.97]"
                                 >
                                     <div className="h-14 w-14 rounded-2xl bg-indigo-50 flex items-center justify-center mb-8 border border-indigo-100 transition-colors group-hover:bg-indigo-100">
                                         <Factory className="h-7 w-7 text-indigo-600" />

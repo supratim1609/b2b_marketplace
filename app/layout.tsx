@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "India's leading B2B marketplace for industrial goods.",
 };
 
+import Preloader from "./components/Preloader";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,6 +32,7 @@ export default function RootLayout({
         className={`${inter.variable} ${outfit.variable} antialiased font-sans bg-slate-50 text-slate-900 selection:bg-cyan-200 selection:text-cyan-900`}
         suppressHydrationWarning
       >
+        <Preloader />
         {children}
       </body>
     </html>

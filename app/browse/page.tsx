@@ -23,10 +23,10 @@ export default function BrowseSuppliers() {
                 <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-50/50 rounded-full blur-[120px]" />
             </div>
 
-            <main className="pt-64 pb-32">
+            <main className="pt-32 md:pt-64 pb-20 md:pb-32">
                 <div className="mx-auto max-w-7xl px-6">
                     {/* Coming Soon Hero */}
-                    <div className="text-center mb-24 max-w-6xl mx-auto">
+                    <div className="text-center mb-12 md:mb-24 max-w-6xl mx-auto">
                         <FadeIn>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-8 pointer-events-none">
                                 <span className="relative flex h-2 w-2">
@@ -60,21 +60,21 @@ export default function BrowseSuppliers() {
                     </div>
 
                     {/* Industrial Sneak Peek */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         <StaggerContainer className="contents">
                             {industrialGlimpse.map((item, idx) => (
                                 <StaggerItem key={idx}>
-                                    <div className="group p-8 rounded-[40px] bg-slate-50 border border-slate-100 hover:bg-white hover:border-cyan-200 hover:shadow-2xl hover:shadow-cyan-500/5 transition-all duration-500 relative overflow-hidden h-full">
+                                    <div className="group p-5 md:p-8 rounded-[24px] md:rounded-[40px] bg-slate-50 border border-slate-100 hover:bg-white hover:border-cyan-200 hover:shadow-2xl hover:shadow-cyan-500/5 transition-all duration-500 relative overflow-hidden h-full">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-100/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-cyan-200/30 transition-all" />
 
-                                        <div className="h-14 w-14 rounded-2xl bg-white flex items-center justify-center text-slate-950 mb-8 border border-slate-100 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-sm">
+                                        <div className="h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center text-slate-950 mb-4 md:mb-8 border border-slate-100 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-sm">
                                             {item.icon}
                                         </div>
 
-                                        <h3 className="text-xl font-black mb-2 text-slate-950">{item.name}</h3>
-                                        <p className="text-sm text-slate-500 font-light flex items-center gap-2">
-                                            <Sparkles className="h-3 w-3 text-cyan-600 animate-pulse" />
-                                            {item.count}
+                                        <h3 className="text-sm md:text-xl font-black mb-1 md:mb-2 text-slate-950">{item.name}</h3>
+                                        <p className="text-[10px] md:text-sm text-slate-500 font-light flex items-center gap-1.5 md:gap-2">
+                                            <Sparkles className="h-2.5 w-2.5 md:h-3 md:w-3 text-cyan-600 animate-pulse" />
+                                            {item.count.replace(' Manufacturers Enrolling', '').replace(' Clusters Mapping', '').replace(' Verified Bulk Suppliers', '').replace(' Precision Units Joining', '')}
                                         </p>
                                     </div>
                                 </StaggerItem>
@@ -82,30 +82,7 @@ export default function BrowseSuppliers() {
                         </StaggerContainer>
                     </div>
 
-                    {/* Bottom Utility Strip */}
-                    <FadeIn delay={0.4} className="mt-20 pt-16 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-                        <div>
-                            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-2">Network Status</p>
-                            <div className="flex items-center gap-3">
-                                <div className="flex -space-x-2">
-                                    {[1, 2, 3, 4].map(i => (
-                                        <div key={i} className="h-8 w-8 rounded-full border-2 border-white bg-slate-200" />
-                                    ))}
-                                </div>
-                                <span className="text-sm font-bold text-slate-700">850+ Businesses Waiting</span>
-                            </div>
-                        </div>
-                        <div className="flex gap-12">
-                            <div>
-                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-2">Verification Pipeline</p>
-                                <p className="text-xl font-black text-slate-950 uppercase">72 Factories</p>
-                            </div>
-                            <div>
-                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-2">Next Update In</p>
-                                <p className="text-xl font-black text-slate-950 uppercase">48 Hours</p>
-                            </div>
-                        </div>
-                    </FadeIn>
+
                 </div>
             </main>
 
