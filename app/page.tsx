@@ -125,21 +125,14 @@ export default function Home() {
                 Verified trade, secure payments, and frictionless logistics.
               </p>
 
-              {/* Directly Accessible Registration CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-20 sm:mb-24 px-4">
+              {/* Single Unified Registration CTA */}
+              <div className="flex justify-center mb-20 sm:mb-24 px-4">
                 <Link
-                  href="/signup?type=buyer"
-                  className="group w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-3"
+                  href="/signup"
+                  className="group w-full sm:w-auto px-12 sm:px-16 py-5 sm:py-6 bg-slate-900 text-white rounded-full font-black text-xl hover:bg-slate-800 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-4"
                 >
-                  Register as Buyer
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href="/signup?type=supplier"
-                  className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-white text-slate-900 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all active:scale-95 hover:border-slate-300 shadow-sm flex items-center justify-center gap-3"
-                >
-                  <Plus className="h-5 w-5 text-slate-400 group-hover:rotate-90 transition-transform" />
-                  Join as Seller
+                  Let&apos;s Gooo
+                  <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
 
