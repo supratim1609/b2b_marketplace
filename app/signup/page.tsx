@@ -163,10 +163,7 @@ function SignUpForm() {
                     </form>
 
                     <p className="mt-10 text-center text-sm text-slate-500">
-                        Already have an account?{" "}
-                        <Link href="/login" className="font-semibold leading-6 text-cyan-600 hover:text-cyan-500">
-                            Log in
-                        </Link>
+                        &copy; 2025 bechoHub. Scaling Indian manufacturing.
                     </p>
                 </div>
             </div>

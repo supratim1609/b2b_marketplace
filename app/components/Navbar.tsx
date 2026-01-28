@@ -32,7 +32,6 @@ export default function Navbar() {
   const navLinks = [
     { name: "Browse Suppliers", href: "/browse" },
     { name: "How It Works", href: "/how-it-works" },
-    { name: "Login", href: "/login" },
     { name: "Sign Up", href: "/signup" },
   ];
 

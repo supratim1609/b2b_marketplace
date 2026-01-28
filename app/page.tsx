@@ -59,7 +59,6 @@ export default function Home() {
           </Link>
 
           <div className="hidden md:flex items-center gap-10 text-sm font-semibold text-slate-500">
-            <Link href="/login" className="hover:text-slate-900 transition-colors">Sign in</Link>
             <Link href="#onboarding" className="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-slate-800 transition-all active:scale-95 shadow-xl shadow-slate-200">
               Get Started
             </Link>
@@ -85,13 +84,6 @@ export default function Home() {
               className="fixed inset-0 z-40 bg-white flex flex-col pt-24 px-8 md:hidden"
             >
               <div className="flex flex-col gap-8">
-                <Link
-                  href="/login"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-4xl font-bold text-slate-900 tracking-tight"
-                >
-                  Sign in
-                </Link>
                 <Link
                   href="#onboarding"
                   onClick={() => setIsMenuOpen(false)}
