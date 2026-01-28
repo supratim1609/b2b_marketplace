@@ -5,8 +5,9 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Factory, ShoppingBag } from "lucide-react";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function SignUp() {
+function SignUpForm() {
     const searchParams = useSearchParams();
     const type = searchParams.get('type') as 'buyer' | 'supplier' | null;
     const [userType, setUserType] = useState<'buyer' | 'supplier'>(type || 'buyer');
@@ -43,7 +44,7 @@ export default function SignUp() {
                 </div>
 
                 <div className="relative z-10 text-sm text-slate-400">
-                    &copy; 2024 bechoHub. All rights reserved.
+                    &copy; 2025 bechoHub. All rights reserved.
                 </div>
             </div>
 
@@ -170,5 +171,13 @@ export default function SignUp() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function SignUp() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-slate-50 flex items-center justify-center">Loading...</div>}>
+            <SignUpForm />
+        </Suspense>
     );
 }
