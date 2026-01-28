@@ -12,7 +12,8 @@ import {
   Users2,
   ChevronRight,
   Menu,
-  X
+  X,
+  Plus
 } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "./components/Animators";
 
@@ -37,6 +38,7 @@ export default function Home() {
           </Link>
 
           <div className="hidden md:flex items-center gap-10 text-sm font-semibold text-slate-500">
+            <Link href="/login" className="hover:text-slate-900 transition-colors">Sign in</Link>
             <Link href="#onboarding" className="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-slate-800 transition-all active:scale-95 shadow-xl shadow-slate-200">
               Get Started
             </Link>
@@ -53,20 +55,31 @@ export default function Home() {
         <section className="relative pt-32 pb-20 px-6 overflow-hidden">
           <div className="max-w-7xl mx-auto text-center relative">
             <FadeIn>
-              <h1 className="text-6xl md:text-[120px] font-black tracking-tightest leading-[0.85] mb-12 font-heading text-slate-900">
-                Sourcing made <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600">frictionless.</span>
+              <h1 className="text-6xl md:text-[110px] font-black tracking-tightest leading-[0.85] mb-12 font-heading text-slate-900">
+                India&apos;s Premiere <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600">B2B Network.</span>
               </h1>
 
               <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto mb-16 font-light leading-relaxed">
-                Connect with verified Indian manufacturers. <br className="hidden md:block" />
-                Zero guesswork, secured escrow, guaranteed fulfillment.
+                Connect directly with 5,000+ verified Indian manufacturers. <br className="hidden md:block" />
+                Secure payments, verified logistics, and zero-risk trade.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-24">
-                <Link href="#onboarding" className="group w-full sm:w-auto px-12 py-5 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-3">
-                  Launch Growth
+              {/* Directly Accessible Registration CTAs */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
+                <Link
+                  href="/signup?type=buyer"
+                  className="group w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-3"
+                >
+                  Join as Buyer
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/signup?type=supplier"
+                  className="w-full sm:w-auto px-10 py-5 bg-white text-slate-900 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all active:scale-95 hover:border-slate-300 shadow-sm flex items-center justify-center gap-3"
+                >
+                  <Plus className="h-5 w-5 text-slate-400 group-hover:rotate-90 transition-transform" />
+                  Register as Seller
                 </Link>
               </div>
 
@@ -77,8 +90,8 @@ export default function Home() {
                     <CheckCircle2 className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Vetted MSMEs</h3>
-                    <p className="text-sm text-slate-500 mt-1">100% GST-verified trade partners.</p>
+                    <h3 className="font-bold text-slate-900">Verified MSMEs</h3>
+                    <p className="text-sm text-slate-500 mt-1">100% GST-verified trade network.</p>
                   </div>
                 </StaggerItem>
                 <StaggerItem className="flex items-start gap-4 text-left">
@@ -86,8 +99,8 @@ export default function Home() {
                     <ShieldCheck className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Escrow Security</h3>
-                    <p className="text-sm text-slate-500 mt-1">Capital protected until quality approval.</p>
+                    <h3 className="font-bold text-slate-900">Zero-Risk Payments</h3>
+                    <p className="text-sm text-slate-500 mt-1">Escrow protection for every order.</p>
                   </div>
                 </StaggerItem>
                 <StaggerItem className="flex items-start gap-4 text-left">
@@ -95,8 +108,8 @@ export default function Home() {
                     <TrendingUp className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Fulfillment Engine</h3>
-                    <p className="text-sm text-slate-500 mt-1">End-to-end logistics with real-time tracking.</p>
+                    <h3 className="font-bold text-slate-900">Live Logistics</h3>
+                    <p className="text-sm text-slate-500 mt-1">End-to-end tracking and fulfillment.</p>
                   </div>
                 </StaggerItem>
               </StaggerContainer>
@@ -122,13 +135,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Onboarding Bridge - Fast Landing */}
+        {/* Rapid Onboarding Bridge */}
         <section id="onboarding" className="py-40 px-6 bg-slate-900 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[160px] -z-10" />
           <div className="max-w-6xl mx-auto text-center mb-24">
             <FadeIn>
-              <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">Ready to scale?</h2>
-              <p className="text-slate-400 text-xl font-light">Select your point of entry into the network.</p>
+              <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">Ready to Trade?</h2>
+              <p className="text-slate-400 text-xl font-light">Join the network and start growing today.</p>
             </FadeIn>
           </div>
 
@@ -139,10 +152,10 @@ export default function Home() {
                   <ArrowRight className="h-10 w-10 -rotate-45" />
                 </div>
                 <Users2 className="h-14 w-14 text-cyan-400 mb-8" />
-                <h3 className="text-3xl font-bold mb-6 tracking-tight">I am a Buyer</h3>
-                <p className="text-slate-400 text-lg mb-12 font-light leading-relaxed">Source high-volume industrial goods with guaranteed quality and payment security.</p>
+                <h3 className="text-3xl font-bold mb-6 tracking-tight">Register as Buyer</h3>
+                <p className="text-slate-400 text-lg mb-12 font-light leading-relaxed">Source industrial goods with guaranteed quality and payment security.</p>
                 <div className="inline-flex items-center text-sm font-black uppercase tracking-[0.2em] text-cyan-400 gap-2">
-                  Start Sourcing <ChevronRight className="h-4 w-4" />
+                  Get Started <ChevronRight className="h-4 w-4" />
                 </div>
               </Link>
             </FadeIn>
@@ -153,10 +166,10 @@ export default function Home() {
                   <ArrowRight className="h-10 w-10 -rotate-45" />
                 </div>
                 <Building2 className="h-14 w-14 text-indigo-400 mb-8" />
-                <h3 className="text-3xl font-bold mb-6 tracking-tight">I am a Seller</h3>
+                <h3 className="text-3xl font-bold mb-6 tracking-tight">Register as Seller</h3>
                 <p className="text-slate-400 text-lg mb-12 font-light leading-relaxed">Expose your manufacturing capacity to verified buyers and grow your order book.</p>
                 <div className="inline-flex items-center text-sm font-black uppercase tracking-[0.2em] text-indigo-400 gap-2">
-                  Begin Selling <ChevronRight className="h-4 w-4" />
+                  Get Started <ChevronRight className="h-4 w-4" />
                 </div>
               </Link>
             </FadeIn>
