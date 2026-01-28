@@ -93,7 +93,7 @@ export default function Home() {
         </section>
 
         {/* Dynamic Activity Strip */}
-        <section className="py-6 bg-slate-50 border-y border-slate-100 overflow-hidden">
+        <section className="py-12 bg-slate-50 border-y border-slate-100 overflow-hidden">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -111,7 +111,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA - Ultra Minimal */}
-        <section className="pb-32 px-6">
+        <section className="pt-32 pb-32 px-6">
           <FadeIn>
             <div className="max-w-6xl mx-auto p-12 md:p-32 rounded-[64px] bg-slate-950 text-white text-center relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none" />
