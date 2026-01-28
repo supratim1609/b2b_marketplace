@@ -131,7 +131,7 @@ export default function Home() {
                   href="/signup"
                   className="group w-full sm:w-auto px-12 sm:px-16 py-5 sm:py-6 bg-slate-900 text-white rounded-full font-black text-xl hover:bg-slate-800 transition-all hover:scale-[1.05] active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-4"
                 >
-                  Let&apos;s Gooo
+                  Get Started
                   <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>

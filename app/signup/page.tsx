@@ -96,7 +96,7 @@ function SignUpForm() {
                             exit={{ opacity: 0, x: -20 }}
                             className="w-full max-w-xl text-center"
                         >
-                            <h2 className="text-4xl md:text-6xl font-black tracking-tightest mb-6">How do you wish <br /><span className="text-cyan-400">to join?</span></h2>
+                            <h2 className="text-4xl md:text-6xl font-black tracking-tightest mb-6 uppercase">Registration <br /><span className="text-cyan-400">Type.</span></h2>
                             <p className="text-slate-400 text-lg mb-12 font-light">Select your path to start scaling your business.</p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
@@ -137,7 +137,7 @@ function SignUpForm() {
                             <button onClick={prevStep} className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-8 text-sm font-bold uppercase tracking-widest">
                                 <ChevronLeft className="h-4 w-4" /> Go Back
                             </button>
-                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">About <span className="text-cyan-400">You.</span></h2>
+                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">Identity <br /><span className="text-cyan-400">Details.</span></h2>
 
                             <div className="space-y-6">
                                 <div className="space-y-2">
@@ -204,7 +204,7 @@ function SignUpForm() {
                             <button onClick={prevStep} className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-8 text-sm font-bold uppercase tracking-widest">
                                 <ChevronLeft className="h-4 w-4" /> Go Back
                             </button>
-                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">Your <span className="text-cyan-400">Business.</span></h2>
+                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">Business <br /><span className="text-cyan-400">Information.</span></h2>
 
                             <div className="space-y-6">
                                 <div className="space-y-2">
@@ -258,7 +258,7 @@ function SignUpForm() {
                             <button onClick={prevStep} className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-8 text-sm font-bold uppercase tracking-widest">
                                 <ChevronLeft className="h-4 w-4" /> Go Back
                             </button>
-                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">Secure <span className="text-cyan-400">Account.</span></h2>
+                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">Account <br /><span className="text-cyan-400">Security.</span></h2>
 
                             <div className="space-y-6">
                                 <div className="space-y-2">
@@ -309,10 +309,10 @@ function SignUpForm() {
                             <p className="text-slate-400 text-xl mb-12 font-light">Your application is under review. <br />You will receive a verification call within 24 hours.</p>
 
                             <button
-                                onClick={() => router.push('/')}
+                                onClick={() => router.push("/")}
                                 className="px-12 py-5 rounded-full bg-white text-slate-950 font-black uppercase tracking-widest hover:bg-slate-100 transition-all active:scale-[0.95]"
                             >
-                                Return to Dashboard
+                                Continue to Home
                             </button>
                         </motion.div>
                     )}
@@ -326,7 +326,7 @@ function SignUpForm() {
                     BECHOHUB
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
