@@ -26,7 +26,7 @@ function SignUpForm() {
     const initialType = searchParams.get('type') as 'buyer' | 'supplier' | null;
 
     const [step, setStep] = useState(1);
-    const [userType, setUserType] = useState<'buyer' | 'supplier'>(initialType || 'buyer');
+    const [userType, setUserType] = useState<'buyer' | 'supplier' | null>(initialType);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -101,22 +101,20 @@ function SignUpForm() {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
                                 <button
-                                    onClick={() => { setUserType('buyer'); nextStep(); }}
-                                    className={`group p-8 rounded-[32px] border transition-all text-left relative overflow-hidden ${userType === 'buyer' ? 'bg-white/10 border-cyan-500/50 shadow-2xl shadow-cyan-500/10' : 'bg-white/5 border-white/5 hover:bg-white/[0.07]'
-                                        }`}
+                                    onClick={() => { setUserType('buyer'); setTimeout(nextStep, 150); }}
+                                    className="group p-8 rounded-[32px] border border-white/5 bg-white/5 hover:bg-white/10 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all text-left relative overflow-hidden active:scale-95"
                                 >
-                                    <ShoppingBag className={`h-10 w-10 mb-6 transition-colors ${userType === 'buyer' ? 'text-cyan-400' : 'text-slate-500 group-hover:text-white'}`} />
+                                    <ShoppingBag className="h-10 w-10 mb-6 text-slate-500 group-hover:text-cyan-400 transition-colors" />
                                     <h3 className="text-xl font-bold mb-2">I am a Buyer</h3>
                                     <p className="text-sm text-slate-400 font-light leading-relaxed">Sourcing high-quality goods from verified manufacturers.</p>
                                     <ArrowRight className="absolute bottom-8 right-8 h-6 w-6 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-cyan-400" />
                                 </button>
 
                                 <button
-                                    onClick={() => { setUserType('supplier'); nextStep(); }}
-                                    className={`group p-8 rounded-[32px] border transition-all text-left relative overflow-hidden ${userType === 'supplier' ? 'bg-white/10 border-indigo-500/50 shadow-2xl shadow-indigo-500/10' : 'bg-white/5 border-white/5 hover:bg-white/[0.07]'
-                                        }`}
+                                    onClick={() => { setUserType('supplier'); setTimeout(nextStep, 150); }}
+                                    className="group p-8 rounded-[32px] border border-white/5 bg-white/5 hover:bg-white/10 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all text-left relative overflow-hidden active:scale-95"
                                 >
-                                    <Factory className={`h-10 w-10 mb-6 transition-colors ${userType === 'supplier' ? 'text-indigo-400' : 'text-slate-500 group-hover:text-white'}`} />
+                                    <Factory className="h-10 w-10 mb-6 text-slate-500 group-hover:text-indigo-400 transition-colors" />
                                     <h3 className="text-xl font-bold mb-2">I am a Seller</h3>
                                     <p className="text-sm text-slate-400 font-light leading-relaxed">Listing manufacturing capacity and connecting with buyers.</p>
                                     <ArrowRight className="absolute bottom-8 right-8 h-6 w-6 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-indigo-400" />
