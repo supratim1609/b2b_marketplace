@@ -93,6 +93,25 @@ export default function Home() {
               </div>
             </FadeIn>
           </div>
+
+          {/* Subtle Live Feed */}
+          <FadeIn delay={0.5} className="mt-24 max-w-4xl mx-auto flex items-center justify-center gap-4 text-xs font-semibold text-slate-400 uppercase tracking-widest overflow-hidden whitespace-nowrap">
+            <span className="flex items-center gap-2 text-cyan-500">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 animate-pulse" />
+              LIVE FEED:
+            </span>
+            <motion.div
+              animate={{ x: ["0%", "-100%"] }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="flex gap-12"
+            >
+              <span>Order Placed: Industrial Bearings (12,000 units) to Pune</span>
+              <span>RFQ Received: Medical Grade Textiles (50 tons) from Surat</span>
+              <span>Payment Released: MSME Hub Bangalore (₹12,40,000)</span>
+              <span>Order Placed: Industrial Bearings (12,000 units) to Pune</span>
+              <span>RFQ Received: Medical Grade Textiles (50 tons) from Surat</span>
+            </motion.div>
+          </FadeIn>
         </section>
 
         {/* The Value Props */}
