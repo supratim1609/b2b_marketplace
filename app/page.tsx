@@ -53,10 +53,6 @@ export default function Home() {
         <section className="relative pt-24 pb-32 px-6">
           <div className="max-w-5xl mx-auto text-center">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-medium text-slate-600 mb-8">
-                <span className="flex h-2 w-2 rounded-full bg-cyan-500 animate-pulse" />
-                Trusted by 5,000+ Verified MSMEs
-              </div>
 
               <div className="relative mb-8">
                 <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-[1.1] pb-2 font-heading">
