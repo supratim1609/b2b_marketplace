@@ -36,54 +36,25 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm saturate-200' : 'bg-transparent'}`}>
-      {/* Gradient Line at Bottom */}
-      {isScrolled && <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>}
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-sm' : 'bg-transparent'}`}>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold tracking-tight text-slate-900 font-heading">
+              <span className="text-2xl font-black tracking-tighter text-slate-950 font-heading">
                 bechoHub
               </span>
             </Link>
           </div>
 
-          {/* Search Bar - Hidden on mobile, can add toggle later */}
-          <div className="hidden md:flex flex-1 mx-8 max-w-2xl">
-            <div className="relative w-full">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <Search className="h-4 w-4 text-gray-400" aria-hidden="true" />
-              </div>
-              <input
-                type="text"
-                placeholder="Search for products..."
-                className="block w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-3 text-sm text-slate-900 placeholder-slate-500 focus:border-cyan-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all shadow-sm"
-              />
-            </div>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 text-sm font-medium z-50">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "transition-colors",
-                  isActive(link.href) ? "text-slate-900 font-bold" : "text-slate-600 hover:text-slate-900"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
+          {/* Desktop Navigation - Just Get Started */}
+          <div className="hidden md:flex items-center z-50">
             <Link
-              href="/rfq"
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 transition-all active:scale-95"
+              href="/signup"
+              className="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-3 text-sm font-bold text-white shadow-xl shadow-slate-200 hover:bg-slate-800 transition-all active:scale-95"
             >
-              Post Request
+              Get Started
             </Link>
           </div>
 
@@ -91,7 +62,7 @@ export default function Navbar() {
           <div className="flex md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-400 hover:text-white p-2"
+              className="text-slate-900 p-2"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -109,27 +80,20 @@ export default function Navbar() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-40 bg-white md:hidden flex flex-col pt-24 px-8"
           >
-            <div className="space-y-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    "block text-4xl font-black tracking-tightest transition-all active:scale-95",
-                    isActive(link.href) ? "text-slate-900" : "text-slate-300"
-                  )}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="h-px bg-slate-100 my-10" />
+            <div className="flex flex-col h-full justify-center items-center gap-12">
               <Link
-                href="/rfq"
+                href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center rounded-2xl bg-slate-900 px-4 py-5 text-xl font-bold text-white shadow-2xl shadow-slate-200 transition-all active:scale-95"
+                className="text-6xl font-black tracking-tightest text-slate-950"
               >
-                Post RFQ
+                bechoHub
+              </Link>
+              <Link
+                href="/signup"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-12 py-5 text-xl font-bold text-white shadow-2xl shadow-slate-200 transition-all active:scale-95"
+              >
+                Get Started
               </Link>
             </div>
           </motion.div>
