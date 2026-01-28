@@ -42,7 +42,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
-          "pointer-events-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500",
+          "pointer-events-auto grid grid-cols-3 items-center px-6 py-3 rounded-full transition-all duration-500",
           isScrolled
             ? "w-full max-w-4xl bg-white/70 backdrop-blur-xl border border-slate-200/50 shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
             : "w-full max-w-7xl bg-white/20 backdrop-blur-sm border border-transparent"
@@ -57,7 +57,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center justify-center gap-12">
           {[
             { name: "Browse", href: "/browse" },
             { name: "Story", href: "/how-it-works" },
@@ -73,7 +73,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Action */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-end gap-4">
           <Link
             href="/signup"
             className={cn(
