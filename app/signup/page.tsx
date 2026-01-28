@@ -37,10 +37,9 @@ function SignUpForm() {
         gstNumber: "",
         category: "",
         businessScale: "",
-        password: "",
     });
 
-    const totalSteps = 4;
+    const totalSteps = 3;
 
     const nextStep = () => setStep(s => Math.min(s + 1, totalSteps + 1));
     const prevStep = () => setStep(s => Math.max(s - 1, 1));
@@ -54,7 +53,6 @@ function SignUpForm() {
         if (step === 1) return true; // Role is already selected
         if (step === 2) return formData.firstName && formData.email && formData.phone;
         if (step === 3) return formData.companyName && formData.category && formData.businessScale;
-        if (step === 4) return formData.password.length >= 8;
         return true;
     };
 
@@ -325,56 +323,10 @@ function SignUpForm() {
                         </motion.div>
                     )}
 
-                    {/* Step 4: Security */}
+
+
+                    {/* Step 4: Success */}
                     {step === 4 && (
-                        <motion.div
-                            key="step4"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            className="w-full max-w-md"
-                        >
-                            <button onClick={prevStep} className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-8 text-sm font-bold uppercase tracking-widest">
-                                <ChevronLeft className="h-4 w-4" /> Go Back
-                            </button>
-                            <h2 className="text-4xl font-black tracking-tightest mb-8 uppercase">Account <br /><span className="text-cyan-400">Security.</span></h2>
-
-                            <div className="space-y-6">
-                                <div className="space-y-2">
-                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">Create Password</label>
-                                    <div className="relative group">
-                                        <ShieldCheck className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 group-focus-within:text-cyan-400 transition-colors" />
-                                        <input
-                                            name="password"
-                                            type="password"
-                                            value={formData.password}
-                                            onChange={handleInputChange}
-                                            placeholder="••••••••"
-                                            className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 pl-12 pr-4 focus:bg-white/10 focus:border-cyan-500/50 outline-none transition-all text-white placeholder:text-slate-600"
-                                        />
-                                    </div>
-                                    <p className="text-[10px] text-slate-600 font-bold tracking-tight uppercase tracking-wider">Must be at least 8 characters.</p>
-                                </div>
-                                <div className="flex items-start gap-3 p-4 bg-white/5 rounded-2xl border border-white/5 mt-4">
-                                    <input type="checkbox" className="mt-1 h-4 w-4 rounded bg-white/10 border-white/10 text-cyan-500 focus:ring-cyan-500" required />
-                                    <p className="text-[11px] text-slate-400 leading-relaxed font-light">
-                                        I agree to the <Link href="#" className="text-cyan-400 hover:underline">Terms of Service</Link> and <Link href="#" className="text-cyan-400 hover:underline">Privacy Policy</Link>.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <button
-                                onClick={nextStep}
-                                disabled={!isStepValid()}
-                                className="w-full mt-10 py-5 rounded-2xl bg-cyan-500 text-slate-950 font-black uppercase tracking-widest hover:bg-cyan-400 transition-all active:scale-[0.98] disabled:opacity-20 disabled:grayscale disabled:pointer-events-none shadow-[0_20px_40px_rgba(6,182,212,0.2)]"
-                            >
-                                Finish Setup
-                            </button>
-                        </motion.div>
-                    )}
-
-                    {/* Step 5: Success */}
-                    {step === 5 && (
                         <motion.div
                             key="success"
                             initial={{ opacity: 0, scale: 0.9 }}
