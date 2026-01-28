@@ -57,10 +57,6 @@ export default function Home() {
         <section className="relative pt-32 pb-20 px-6 overflow-hidden">
           <div className="max-w-7xl mx-auto text-center relative">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/5 text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-12">
-                <Zap className="h-3 w-3 text-cyan-500 fill-cyan-500" /> Currently in Public Beta
-              </div>
-
               <h1 className="text-6xl md:text-[110px] font-black tracking-tightest leading-[0.85] mb-12 font-heading text-slate-900">
                 The Future of <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600">Indian B2B.</span>
