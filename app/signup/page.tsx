@@ -155,7 +155,7 @@ function SignUpForm() {
 
                         <button
                             type="submit"
-                            className="flex w-full justify-center rounded-md bg-cyan-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 transition-all"
+                            className="flex w-full justify-center rounded-xl bg-cyan-600 px-3 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 transition-all active:scale-[0.98]"
                         >
                             Create Account
                         </button>

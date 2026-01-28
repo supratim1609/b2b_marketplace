@@ -104,41 +104,30 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl md:hidden flex flex-col pt-24 px-8"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2 shadow-lg">
-              {/* Mobile Search */}
-              <div className="relative w-full mb-4 mt-2">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <Search className="h-4 w-4 text-gray-400" aria-hidden="true" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="block w-full rounded-md border border-gray-200 bg-gray-50 py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500"
-                />
-              </div>
-
+            <div className="space-y-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "block px-3 py-2 rounded-md text-base font-medium transition-colors",
-                    isActive(link.href) ? "bg-slate-100 text-slate-900" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    "block text-3xl font-bold tracking-tight transition-colors",
+                    isActive(link.href) ? "text-slate-900" : "text-slate-400"
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
+              <div className="h-px bg-slate-100 my-8" />
               <Link
                 href="/rfq"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center mt-4 rounded-md bg-white px-4 py-3 text-base font-bold text-slate-900 shadow-sm hover:bg-slate-200 transition-all"
+                className="block w-full text-center rounded-full bg-slate-900 px-4 py-4 text-lg font-bold text-white shadow-xl shadow-slate-200 transition-all active:scale-95"
               >
                 Post RFQ
               </Link>

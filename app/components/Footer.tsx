@@ -74,13 +74,13 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="flex items-center gap-6">
+                <div className="pt-12 border-t border-white/5 flex flex-col items-center text-center gap-8 md:flex-row md:justify-between md:text-left">
+                    <div className="flex flex-col sm:flex-row items-center gap-6">
                         <div className="flex items-center gap-2 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
                             <Globe className="h-3 w-3" />
                             IND OPERATIONS
                         </div>
-                        <div className="h-3 w-px bg-white/5 hidden md:block" />
+                        <div className="h-3 w-px bg-white/5 hidden sm:block" />
                         <div className="flex items-center gap-2 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
                             BUILT WITH <Heart className="h-3 w-3 text-rose-500/50 fill-rose-500/20" /> FOR BHARAT
                         </div>
