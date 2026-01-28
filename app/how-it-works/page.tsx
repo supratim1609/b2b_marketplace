@@ -4,148 +4,159 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FadeIn, StaggerContainer, StaggerItem } from "../components/Animators";
-import { Search, ShoppingCart, Truck, CreditCard, Factory, UploadCloud, BadgeCheck, DollarSign, ChevronDown, ChevronUp } from "lucide-react";
+import {
+    Search,
+    ShoppingCart,
+    Truck,
+    CreditCard,
+    Factory,
+    UploadCloud,
+    BadgeCheck,
+    DollarSign,
+    ChevronDown,
+    ChevronUp,
+    ArrowRight,
+    Target,
+    ShieldCheck,
+    Zap
+} from "lucide-react";
+import Link from "next/link";
 
 export default function HowItWorksPage() {
     const [userType, setUserType] = useState<'buyer' | 'supplier'>('buyer');
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-    const toggleFaq = (id: number) => {
-        setOpenFaq(openFaq === id ? null : id);
-    };
 
     const buyerSteps = [
         {
-            id: 1,
-            title: "Post Your Requirement",
-            description: "Tell us what you need, including quantity, specifications, and target price.",
-            icon: Search,
-            color: "bg-blue-100 text-blue-600",
+            id: "01",
+            title: "Project Definition",
+            description: "Define your sourcing needs, material specs, and target landing price. Our engine suggests the best matching clusters.",
+            icon: Target,
+            color: "text-cyan-400",
         },
         {
-            id: 2,
-            title: "Receive Quotes",
-            description: "Verified suppliers submit competitive bids within 24 hours.",
+            id: "02",
+            title: "Quote Aggregation",
+            description: "Verified manufacturers submit competitive bids. We normalize these quotes to help you compare apples-to-apples.",
             icon: DollarSign,
-            color: "bg-green-100 text-green-600",
+            color: "text-blue-400",
         },
         {
-            id: 3,
-            title: "Secure Payment",
-            description: "Pay into our secure escrow account. Funds are released only after delivery.",
-            icon: CreditCard,
-            color: "bg-purple-100 text-purple-600",
+            id: "03",
+            title: "Escrow Funding",
+            description: "Fund your order through our secure payment bridge. Capital is protected until QC reports are approved.",
+            icon: ShieldCheck,
+            color: "text-indigo-400",
         },
         {
-            id: 4,
-            title: "Delivery & Feedback",
-            description: "Track your shipment and rate your supplier to build trust.",
+            id: "04",
+            title: "Doorstep Logistics",
+            description: "Full visibility from factory floor to your warehouse. Customs, duties, and port-clearance handled.",
             icon: Truck,
-            color: "bg-orange-100 text-orange-600",
+            color: "text-fuchsia-400",
         },
     ];
 
     const supplierSteps = [
         {
-            id: 1,
-            title: "Create Profile",
-            description: "Sign up and complete your business profile with GST and certifications.",
+            id: "01",
+            title: "Capacity Listing",
+            description: "List your available floor time and machine capabilities. Get verified through our 3-tier audit process.",
             icon: Factory,
-            color: "bg-teal-100 text-cyan-500",
+            color: "text-cyan-400",
         },
         {
-            id: 2,
-            title: "Browse Leads",
-            description: "Access thousands of verified buy requirements from across the country.",
-            icon: Search,
-            color: "bg-indigo-100 text-indigo-600",
+            id: "02",
+            title: "Lead Intelligence",
+            description: "Access high-intent RFQs that match your specific machine setup and expertise level.",
+            icon: Zap,
+            color: "text-blue-400",
         },
         {
-            id: 3,
-            title: "Submit Quotes",
-            description: "Send your best offers directly to buyers without intermediaries.",
+            id: "03",
+            title: "Smart Quoting",
+            description: "Use our data-backed pricing tools to submit bids that win without sacrificing your margins.",
             icon: UploadCloud,
-            color: "bg-pink-100 text-pink-600",
+            color: "text-indigo-400",
         },
         {
-            id: 4,
-            title: "Get Paid Fast",
-            description: "Receive payments securely upon successful delivery of goods.",
+            id: "04",
+            title: "Rapid Settlement",
+            description: "Payments are triggered automatically upon shipment verification. Zero-delay capital rotation.",
             icon: BadgeCheck,
-            color: "bg-yellow-100 text-yellow-600",
+            color: "text-fuchsia-400",
         },
     ];
 
     const currentSteps = userType === 'buyer' ? buyerSteps : supplierSteps;
 
     return (
-        <div className="min-h-screen bg-slate-50 font-sans selection:bg-cyan-200 selection:text-cyan-900">
+        <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-cyan-500/30 overflow-x-hidden">
             <Navbar />
-            <main className="pt-24 pb-16">
-                {/* Hero Section */}
-                <section className="relative px-6 lg:px-8 py-16 lg:py-24 overflow-hidden">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-fuchsia-200/40 rounded-full blur-[120px] pointer-events-none mix-blend-multiply"></div>
-                    <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-200/40 rounded-full blur-[100px] pointer-events-none mix-blend-multiply"></div>
 
-                    <div className="mx-auto max-w-4xl text-center relative z-10">
+            <main className="pt-32 pb-20">
+                {/* Hero section with high-impact typography */}
+                <section className="px-6 relative mb-24 md:mb-40">
+                    <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+                    <div className="max-w-5xl mx-auto text-center relative z-10">
                         <FadeIn>
-                            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl mb-6 font-heading">
-                                How <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-fuchsia-600">bechoHub</span> Works
+                            <h1 className="text-5xl md:text-8xl font-black tracking-tightest mb-8 uppercase leading-[0.9]">
+                                The Trade <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600">Operating System.</span>
                             </h1>
-                            <p className="text-lg leading-8 text-slate-600 max-w-2xl mx-auto">
-                                From request to delivery, we've streamlined every step of the sourcing process.
-                                Simple, transparent, and secure.
+                            <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                                We've engineered every friction point out of the B2B journey. <br className="hidden md:block" />
+                                Faster, deeper, and completely verified.
                             </p>
 
-                            <div className="mt-10 flex justify-center gap-4">
+                            <div className="flex justify-center p-1.5 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 w-fit mx-auto">
                                 <button
                                     onClick={() => setUserType('buyer')}
-                                    className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${userType === 'buyer'
-                                        ? 'bg-slate-900 text-white shadow-lg shadow-cyan-500/20'
-                                        : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                                    className={`px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all ${userType === 'buyer'
+                                            ? 'bg-cyan-500 text-slate-950 shadow-[0_0_20px_rgba(6,182,212,0.4)]'
+                                            : 'text-slate-400 hover:text-white'
                                         }`}
                                 >
-                                    For Buyers
+                                    Buyer Path
                                 </button>
                                 <button
                                     onClick={() => setUserType('supplier')}
-                                    className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${userType === 'supplier'
-                                        ? 'bg-slate-900 text-white shadow-lg shadow-fuchsia-500/20'
-                                        : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                                    className={`px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all ${userType === 'supplier'
+                                            ? 'bg-indigo-500 text-white shadow-[0_0_20px_rgba(99,102,241,0.4)]'
+                                            : 'text-slate-400 hover:text-white'
                                         }`}
                                 >
-                                    For Suppliers
+                                    Seller Path
                                 </button>
                             </div>
                         </FadeIn>
                     </div>
                 </section>
 
-                {/* Steps Section */}
-                <section className="px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="mx-auto max-w-5xl">
-                        <StaggerContainer className="space-y-8 relative">
-                            {/* Connecting Line (Desktop) */}
-                            <div className="absolute left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-transparent via-slate-200 to-transparent hidden md:block -z-10" />
+                {/* Vertical Process Steps */}
+                <section className="px-6 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+                        <div className="sticky top-40 hidden md:block">
+                            <h2 className="text-6xl font-black tracking-tightest uppercase text-slate-900 border-l-8 border-cyan-500 pl-8">
+                                Step by <br /> step.
+                            </h2>
+                            <p className="text-slate-500 text-lg mt-8 max-w-sm font-light">
+                                Our platform handles the complexity so you can focus on building your business.
+                            </p>
+                        </div>
 
+                        <StaggerContainer className="space-y-12">
                             {currentSteps.map((step, index) => (
                                 <StaggerItem key={step.id}>
-                                    <div className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                                        <div className="flex-1 w-full relative group">
-                                            <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-400 to-fuchsia-400 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur"></div>
-                                            <div className="relative bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 h-full">
-                                                <div className="h-12 w-12 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center mb-4 text-cyan-600">
-                                                    <step.icon className="h-6 w-6" />
-                                                </div>
-                                                <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                                                <p className="text-slate-600 leading-relaxed">{step.description}</p>
+                                    <div className="group relative p-10 rounded-[40px] bg-white/[0.03] border border-white/5 hover:bg-white/[0.07] hover:border-white/10 transition-all">
+                                        <div className="flex justify-between items-start mb-8">
+                                            <div className={`h-14 w-14 rounded-2xl bg-white/5 flex items-center justify-center ${step.color} border border-white/5`}>
+                                                <step.icon className="h-7 w-7" />
                                             </div>
+                                            <span className="text-5xl font-black text-white/5 group-hover:text-white/10 transition-colors">{step.id}</span>
                                         </div>
-
-                                        <div className="relative flex-shrink-0 z-10 hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 border-4 border-white shadow-md font-bold text-slate-400 text-sm">
-                                            {index + 1}
-                                        </div>
-                                        <div className="flex-1 w-full hidden md:block" />
+                                        <h3 className="text-2xl font-bold mb-4 tracking-tight text-white">{step.title}</h3>
+                                        <p className="text-slate-400 leading-relaxed font-light">{step.description}</p>
                                     </div>
                                 </StaggerItem>
                             ))}
@@ -153,43 +164,21 @@ export default function HowItWorksPage() {
                     </div>
                 </section>
 
-                {/* FAQ Snippet */}
-                <section className="px-4 py-20 bg-slate-50 relative overflow-hidden">
-                    <div className="mx-auto max-w-3xl">
-                        <FadeIn>
-                            <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Frequently Asked Questions</h2>
-                            <div className="space-y-4">
-                                {[
-                                    { q: "Is it free to join?", a: "Yes, joining bechoHub is completely free for both suppliers and buyers. We only charge a small transaction fee upon successful deals." },
-                                    { q: "How are suppliers verified?", a: "We conduct a rigorous 3-step verification process verifying GST, factory audits, and past performance records." },
-                                    { q: "Is my payment secure?", a: "Absolutely. We use an escrow system where funds are only released to the supplier after you verify the goods." }
-                                ].map((faq, i) => (
-                                    <div key={i} className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:border-blue-400/30 transition-all">
-                                        <h3 className="text-lg font-semibold text-slate-900 mb-2">{faq.q}</h3>
-                                        <p className="text-slate-600">{faq.a}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </FadeIn>
-                    </div>
-                </section>
-
-                {/* CTA */}
-                <section className="px-4 py-20 text-center">
-                    <FadeIn delay={0.2}>
-                        <div className="bg-slate-900 rounded-3xl p-12 max-w-5xl mx-auto relative overflow-hidden shadow-2xl">
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/40 to-blue-900/40 opacity-50"></div>
-                            <div className="relative z-10">
-                                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Ready to transform your sourcing?</h2>
-                                <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">Join thousands of businesses already using bechoHub to source smarter.</p>
-                                <button className="px-8 py-3.5 bg-white text-slate-900 rounded-full font-bold hover:bg-cyan-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                                    Get Started Now
-                                </button>
-                            </div>
+                {/* Final CTA */}
+                <section className="mt-40 px-6">
+                    <FadeIn>
+                        <div className="max-w-6xl mx-auto p-12 md:p-24 rounded-[64px] bg-gradient-to-br from-slate-900 to-slate-950 border border-white/5 text-center relative overflow-hidden">
+                            <div className="absolute inset-0 bg-cyan-500/5 blur-[120px] -z-10" />
+                            <h2 className="text-4xl md:text-7xl font-black tracking-tightest uppercase mb-12">Ready to <span className="text-cyan-400">Scale?</span></h2>
+                            <Link
+                                href="/signup"
+                                className="inline-flex items-center gap-4 px-12 py-6 bg-white text-slate-950 rounded-full font-black text-xl uppercase tracking-widest hover:bg-slate-200 transition-all hover:scale-105 active:scale-95"
+                            >
+                                Get Started Now <ArrowRight className="h-6 w-6" />
+                            </Link>
                         </div>
                     </FadeIn>
                 </section>
-
             </main>
 
             <Footer />
