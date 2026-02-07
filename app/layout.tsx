@@ -15,8 +15,47 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "bechoHub",
-  description: "India's leading B2B marketplace for industrial goods.",
+  metadataBase: new URL('https://bechohub.com'),
+  title: {
+    default: "bechoHub | India's Premiere B2B Network",
+    template: "%s | bechoHub"
+  },
+  description: "India's leading B2B marketplace connecting verified manufacturers with high-intent buyers. Source smarter, grow faster.",
+  keywords: ["B2B Marketplace", "India Manufacturing", "Industrial Goods", "Supply Chain", "Wholesale", "Sourcing", "Factory Direct"],
+  authors: [{ name: "bechoHub Team" }],
+  creator: "bechoHub",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://bechohub.com",
+    title: "bechoHub | India's Premiere B2B Network",
+    description: "The all-in-one platform for buyers to source smarter and suppliers to grow faster.",
+    siteName: "bechoHub",
+    images: [{
+      url: "/opengraph-image",
+      width: 1200,
+      height: 630,
+      alt: "bechoHub - India's Premiere B2B Network"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "bechoHub | India's Premiere B2B Network",
+    description: "The all-in-one platform for buyers to source smarter and suppliers to grow faster.",
+    creator: "@bechohub",
+    images: ["/opengraph-image"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 import Preloader from "./components/Preloader";
