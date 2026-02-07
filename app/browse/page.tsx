@@ -74,7 +74,7 @@ export default function BrowseSuppliers() {
                                         <h3 className="text-sm md:text-xl font-black mb-1 md:mb-2 text-slate-950">{item.name}</h3>
                                         <p className="text-[10px] md:text-sm text-slate-500 font-light flex items-center gap-1.5 md:gap-2">
                                             <Sparkles className="h-2.5 w-2.5 md:h-3 md:w-3 text-cyan-600 animate-pulse" />
-                                            {item.count.replace(' Manufacturers Enrolling', '').replace(' Clusters Mapping', '').replace(' Verified Bulk Suppliers', '').replace(' Precision Units Joining', '')}
+                                            {item.count.replace(/ (Manufacturers Enrolling|Clusters Mapping|Verified Bulk Suppliers|Precision Units Joining)/, '')}
                                         </p>
                                     </div>
                                 </StaggerItem>

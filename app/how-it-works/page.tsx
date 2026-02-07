@@ -65,9 +65,9 @@ export default function HowItWorksPage() {
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-50/40 rounded-full blur-[120px]" />
             </div>
 
-            <main className="pt-32 md:pt-64 pb-20 md:pb-32">
+            <main className="pt-24 md:pt-64 pb-20 md:pb-32">
                 {/* Hero section - Cinematic Narrative */}
-                <section className="px-6 relative mb-20 md:mb-40 lg:mb-64">
+                <section className="px-6 relative mb-20 md:mb-40 lg:mb-48">
                     <div className="max-w-7xl mx-auto text-center relative z-10">
                         <FadeIn>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-10">
@@ -136,7 +136,7 @@ export default function HowItWorksPage() {
                     </StaggerContainer>
                 </section>
 
-                <section className="mt-64 px-6 overflow-hidden">
+                <section className="mt-32 md:mt-64 px-6 overflow-hidden">
                     <FadeIn>
                         <div className="max-w-6xl mx-auto px-6 py-20 md:p-32 rounded-[32px] md:rounded-[64px] bg-slate-950 text-white text-center relative overflow-hidden group">
                             {/* Animated Background Sparks */}

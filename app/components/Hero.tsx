@@ -8,7 +8,7 @@ import { FadeIn, SlideUp } from "./Animators";
 
 export default function Hero() {
     return (
-        <div className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24">
+        <div className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Aurora Gradients - Vibrant & Deep */}
                 {/* Aurora Gradients - Subtle & Clean for Light Mode */}
@@ -21,40 +21,40 @@ export default function Hero() {
                     {/* Text Content */}
                     <div className="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
                         <FadeIn delay={0.1}>
-                            <div className="inline-flex items-center rounded-full bg-slate-50 border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600 mb-8 tracking-wide uppercase">
+                            <div className="inline-flex items-center rounded-full bg-slate-50 border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600 mb-6 tracking-wide uppercase">
                                 <span className="flex h-1.5 w-1.5 rounded-full bg-cyan-500 mr-2 shadow-[0_0_8px_rgba(6,182,212,0.5)]"></span>
                                 India's Premiere B2B Network
                             </div>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
-                            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-[1.1] font-heading">
+                            <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] sm:leading-[1.1] font-heading">
                                 Sourcing made <br className="hidden lg:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-600 to-fuchsia-600">frictionless</span>.
                             </h1>
                         </FadeIn>
 
                         <FadeIn delay={0.3}>
-                            <p className="mt-8 text-lg text-slate-600 sm:text-lg md:mt-8 md:text-xl leading-relaxed lg:mx-0 font-light">
+                            <p className="mt-6 text-base text-slate-600 sm:text-lg md:mt-8 md:text-xl leading-relaxed lg:mx-0 font-light">
                                 The all-in-one platform for buyers to source smarter and suppliers to grow faster.
                                 Verified businesses, secure payments, and end-to-end logistics.
                             </p>
                         </FadeIn>
 
-                        <SlideUp delay={0.4} className="mt-10 sm:mx-auto sm:max-w-lg sm:flex sm:justify-center lg:mx-0 lg:justify-start gap-4">
+                        <SlideUp delay={0.4} className="mt-8 sm:mt-10 sm:mx-auto sm:max-w-lg sm:flex sm:justify-center lg:mx-0 lg:justify-start gap-3">
                             <div className="w-full sm:w-auto">
                                 <Link
                                     href="/signup?type=buyer"
-                                    className="group flex w-full items-center justify-center rounded-full bg-slate-900 px-8 py-4 text-base font-semibold text-white shadow-xl hover:bg-slate-800 hover:scale-[1.02] transition-all duration-300 active:scale-95"
+                                    className="group flex w-full items-center justify-center rounded-full bg-slate-900 px-8 py-4 text-sm sm:text-base font-semibold text-white shadow-xl hover:bg-slate-800 hover:scale-[1.02] transition-all duration-300 active:scale-95"
                                 >
                                     Join as Buyer
                                     <ArrowRight className="ml-2 h-4 w-4 opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all text-white" />
                                 </Link>
                             </div>
-                            <div className="mt-4 sm:mt-0 w-full sm:w-auto">
+                            <div className="mt-3 sm:mt-0 w-full sm:w-auto">
                                 <Link
                                     href="/signup?type=supplier"
-                                    className="flex w-full items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-900 shadow-sm hover:bg-slate-50 transition-all duration-300 active:scale-95"
+                                    className="flex w-full items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-sm sm:text-base font-semibold text-slate-900 shadow-sm hover:bg-slate-50 transition-all duration-300 active:scale-95"
                                 >
                                     Register as Seller
                                 </Link>

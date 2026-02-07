@@ -16,10 +16,14 @@ import {
     Briefcase,
     Smartphone,
     Check,
-    BadgeCheck
+    BadgeCheck,
+    Loader2,
+    Eye,
+    EyeOff
 } from "lucide-react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Suspense } from "react";
+import FormSuccess from "../components/FormSuccess";
 
 function SignUpForm() {
     const searchParams = useSearchParams();
@@ -28,11 +32,14 @@ function SignUpForm() {
 
     const [step, setStep] = useState(1);
     const [userType, setUserType] = useState<'buyer' | 'supplier' | null>(initialType);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
         email: "",
         phone: "",
+        password: "",
         companyName: "",
         gstNumber: "",
         category: "",
@@ -44,14 +51,51 @@ function SignUpForm() {
     const nextStep = () => setStep(s => Math.min(s + 1, totalSteps + 1));
     const prevStep = () => setStep(s => Math.max(s - 1, 1));
 
+    const handleFinalSubmit = async () => {
+        setIsSubmitting(true);
+
+        const data = new FormData();
+        data.append("email", formData.email);
+        data.append("password", formData.password);
+        data.append("firstName", formData.firstName);
+        data.append("companyName", formData.companyName);
+        data.append("role", userType || "buyer");
+        data.append("category", formData.category);
+        data.append("businessScale", formData.businessScale);
+        data.append("gstNumber", formData.gstNumber);
+
+        // Dynamic import to avoid server/client issues if not handled properly, 
+        // though typically we import at top. Let's assume we import 'signup' from actions.
+        const { signup } = await import("../actions/auth");
+
+        const result = await signup(null, data);
+
+        setIsSubmitting(false);
+
+        if (result?.error) {
+            alert("Error: " + result.error);
+        } else {
+            setStep(4);
+        }
+    };
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const isValidPhone = (phone: string) => /^\+?[0-9\s-]{10,}$/.test(phone);
+
     const isStepValid = () => {
-        if (step === 1) return true; // Role is already selected
-        if (step === 2) return formData.firstName && formData.email && formData.phone;
+        if (step === 1) return true;
+        if (step === 2) {
+            return formData.firstName &&
+                isValidEmail(formData.email) &&
+                isValidPhone(formData.phone) &&
+                formData.password &&
+                formData.password.length >= 6;
+        }
         if (step === 3) return formData.companyName && formData.category && formData.businessScale;
         return true;
     };
@@ -171,6 +215,9 @@ function SignUpForm() {
                                             placeholder="john@company.com"
                                             className="w-full bg-slate-50 border border-slate-100 rounded-3xl py-5 pl-14 pr-5 focus:bg-white focus:border-cyan-500 focus:shadow-xl focus:shadow-cyan-500/5 outline-none transition-all text-slate-900 placeholder:text-slate-300"
                                         />
+                                        {formData.email && !isValidEmail(formData.email) && (
+                                            <p className="text-red-500 text-[10px] font-bold mt-1.5 ml-4 uppercase tracking-wider">Invalid Email Address</p>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="space-y-2">
@@ -184,6 +231,30 @@ function SignUpForm() {
                                             placeholder="+91 98765 43210"
                                             className="w-full bg-slate-50 border border-slate-100 rounded-3xl py-5 pl-14 pr-5 focus:bg-white focus:border-cyan-500 focus:shadow-xl focus:shadow-cyan-500/5 outline-none transition-all text-slate-900 placeholder:text-slate-300"
                                         />
+                                        {formData.phone && !isValidPhone(formData.phone) && (
+                                            <p className="text-red-500 text-[10px] font-bold mt-1.5 ml-4 uppercase tracking-wider">Invalid Phone Number (Min 10 digits)</p>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Password</label>
+                                    <div className="relative group">
+                                        <ShieldCheck className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-focus-within:text-cyan-600 transition-colors" />
+                                        <input
+                                            name="password"
+                                            type={showPassword ? "text" : "password"}
+                                            value={formData.password}
+                                            onChange={handleInputChange}
+                                            placeholder="Min. 8 characters"
+                                            className="w-full bg-slate-50 border border-slate-100 rounded-3xl py-5 pl-14 pr-12 focus:bg-white focus:border-cyan-500 focus:shadow-xl focus:shadow-cyan-500/5 outline-none transition-all text-slate-900 placeholder:text-slate-300"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-cyan-600 transition-colors"
+                                        >
+                                            {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -322,11 +393,11 @@ function SignUpForm() {
                             </div>
 
                             <button
-                                onClick={nextStep}
-                                disabled={!isStepValid()}
-                                className="w-full mt-10 py-6 rounded-3xl bg-slate-950 text-white font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-[0.98] disabled:opacity-10 disabled:grayscale disabled:pointer-events-none shadow-2xl shadow-slate-200 text-xs md:text-sm"
+                                onClick={handleFinalSubmit}
+                                disabled={!isStepValid() || isSubmitting}
+                                className="w-full mt-10 py-6 rounded-3xl bg-slate-950 text-white font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-[0.98] disabled:opacity-50 disabled:grayscale disabled:pointer-events-none shadow-2xl shadow-slate-200 text-xs md:text-sm flex items-center justify-center gap-2"
                             >
-                                Continue
+                                {isSubmitting ? <Loader2 className="h-5 w-5 animate-spin" /> : "Complete Registration"}
                             </button>
                         </motion.div>
                     )}
@@ -335,25 +406,12 @@ function SignUpForm() {
 
                     {/* Step 4: Success */}
                     {step === 4 && (
-                        <motion.div
-                            key="success"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="w-full max-w-xl text-center"
-                        >
-                            <div className="w-24 h-24 bg-cyan-50 rounded-full flex items-center justify-center mx-auto mb-10 border border-cyan-100 shadow-xl shadow-cyan-500/5">
-                                <Check className="h-10 w-10 text-cyan-600" strokeWidth={4} />
-                            </div>
-                            <h2 className="text-5xl md:text-8xl font-black tracking-tightest mb-6 text-slate-950 uppercase">Welcome to <br /><span className="text-cyan-600">bechoHub.</span></h2>
-                            <p className="text-slate-500 text-xl mb-12 font-light">Your application is under review. <br />You will receive a verification call within 24 hours.</p>
-
-                            <button
-                                onClick={() => router.push("/")}
-                                className="px-16 py-6 rounded-full bg-slate-950 text-white font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-[0.95] shadow-2xl shadow-slate-200"
-                            >
-                                Continue to Home
-                            </button>
-                        </motion.div>
+                        <FormSuccess
+                            title={<span>Welcome to <br /><span className="text-cyan-600">bechoHub.</span></span> as any}
+                            subtitle="Your application is under review. You will receive a verification call within 24 hours."
+                            actionLabel="Continue to Home"
+                            actionLink="/"
+                        />
                     )}
 
                 </AnimatePresence>
@@ -365,7 +423,7 @@ function SignUpForm() {
                     BECHOHUB
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 

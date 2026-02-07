@@ -30,49 +30,49 @@ export default function Home() {
 
       <main>
         {/* Hero Section - Clean Light */}
-        <section className="relative pt-48 pb-20 sm:pt-64 sm:pb-32 px-6 overflow-hidden">
+        <section className="relative pt-32 pb-16 sm:pt-64 sm:pb-32 px-6 overflow-hidden">
           {/* Ambient Backgrounds - Lightened */}
           <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-50/50 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-50/50 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <FadeIn>
-              <h1 className="text-[40px] sm:text-7xl md:text-8xl lg:text-[120px] font-black tracking-tightest leading-[1.1] sm:leading-[0.85] mb-10 font-heading text-slate-950">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[120px] font-black tracking-tightest leading-[0.95] sm:leading-[0.85] mb-8 font-heading text-slate-950">
                 The Future of <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-700">Indian B2B.</span>
               </h1>
 
-              <p className="text-base sm:text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto mb-16 font-light leading-relaxed px-4 md:px-0">
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto mb-12 font-light leading-relaxed px-2 md:px-0">
                 Connect directly with the next generation of verified manufacturers.
                 Full-stack infrastructure built for global scale.
               </p>
 
-              <div className="flex justify-center mb-24 px-4">
+              <div className="flex justify-center mb-16 sm:mb-24 px-4">
                 <Link
                   href="/signup"
-                  className="group w-full sm:w-auto px-12 sm:px-16 py-5 sm:py-6 bg-slate-950 text-white rounded-full font-black text-xs sm:text-sm uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-3"
+                  className="group w-full sm:w-auto px-12 sm:px-16 py-5 sm:py-6 bg-slate-950 text-white rounded-full font-black text-sm uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-95 shadow-2xl shadow-slate-200 flex items-center justify-center gap-3"
                 >
                   Get Started <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
-              {/* Trust Strip */}
-              <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 pt-16 border-t border-slate-100">
-                <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              {/* Trust Strip - Mobile Cards */}
+              <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 pt-12 md:pt-16 md:border-t border-slate-100">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left bg-slate-50 md:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none border border-slate-100 md:border-none">
                   <div className="h-10 w-10 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-600 mb-4 border border-cyan-100">
                     <CheckCircle2 className="h-5 w-5" />
                   </div>
                   <h3 className="font-bold text-lg text-slate-900 mb-2">Verified Factories</h3>
                   <p className="text-sm text-slate-500 font-light">Direct access to audited manufacturing clusters across India.</p>
                 </div>
-                <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left bg-slate-50 md:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none border border-slate-100 md:border-none">
                   <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4 border border-blue-100">
                     <ShieldCheck className="h-5 w-5" />
                   </div>
                   <h3 className="font-bold text-lg text-slate-900 mb-2">Secure Escrow</h3>
                   <p className="text-sm text-slate-500 font-light">Protection for high-value orders through our secure payment bridge.</p>
                 </div>
-                <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left bg-slate-50 md:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none border border-slate-100 md:border-none">
                   <div className="h-10 w-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 border border-indigo-100">
                     <TrendingUp className="h-5 w-5" />
                   </div>
@@ -85,11 +85,11 @@ export default function Home() {
         </section>
 
         {/* Dynamic Activity Strip */}
-        <section className="py-12 bg-slate-50 border-y border-slate-100 overflow-hidden">
+        <section className="py-8 md:py-12 bg-slate-50 border-y border-slate-100 overflow-hidden">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="flex gap-20 whitespace-nowrap text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] px-10"
+            className="flex gap-12 sm:gap-20 whitespace-nowrap text-[11px] sm:text-xs font-black text-slate-400 uppercase tracking-[0.2em] md:tracking-[0.3em] px-4"
           >
             <div className="flex gap-4 items-center">NETWORK: 24 FACTORIES VERIFIED IN SURAT CLUSTER</div>
             <div className="flex gap-4 items-center">LOGISTICS: NEW DELHI-NCR TRADE LANE ACTIVE</div>
@@ -103,11 +103,11 @@ export default function Home() {
         </section>
 
         {/* Comparison Section - High Impact */}
-        <section className="py-20 md:py-32 px-6 bg-white overflow-hidden">
+        <section className="py-16 md:py-32 px-6 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <FadeIn>
-              <div className="text-center mb-24">
-                <h2 className="text-4xl md:text-6xl font-black tracking-tightest uppercase mb-6 text-slate-950">Why bechoHub?</h2>
+              <div className="text-center mb-16 md:mb-24">
+                <h2 className="text-3xl md:text-6xl font-black tracking-tightest uppercase mb-6 text-slate-950">Why bechoHub?</h2>
                 <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">
                   A complete infrastructure rewrite of the Indian manufacturing ecosystem.
                 </p>
@@ -118,50 +118,50 @@ export default function Home() {
                 <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-slate-100 -translate-x-1/2" />
 
                 {/* Traditional Side */}
-                <div className="space-y-12">
-                  <div className="flex items-center gap-4 mb-12">
+                <div className="space-y-12 p-6 md:p-0 bg-slate-50 md:bg-transparent rounded-2xl md:rounded-none">
+                  <div className="flex items-center gap-4 mb-8 md:mb-12">
                     <div className="h-2 w-12 bg-slate-200 rounded-full" />
                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Traditional Marketplaces</span>
                   </div>
 
-                  <div className="space-y-10">
+                  <div className="space-y-8 md:space-y-10">
                     <div className="group">
-                      <h4 className="text-xl font-bold text-slate-400 mb-3 group-hover:text-slate-950 transition-colors">Fragmented Search</h4>
+                      <h4 className="text-lg md:text-xl font-bold text-slate-400 mb-2 md:mb-3 group-hover:text-slate-950 transition-colors">Fragmented Search</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">Endless scrolling through unverified listings with zero data on actual factory capacity.</p>
                     </div>
                     <div className="group">
-                      <h4 className="text-xl font-bold text-slate-400 mb-3 group-hover:text-slate-950 transition-colors">Hidden Intermediaries</h4>
+                      <h4 className="text-lg md:text-xl font-bold text-slate-400 mb-2 md:mb-3 group-hover:text-slate-950 transition-colors">Hidden Intermediaries</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">Multiple layers of traders inflating costs without adding manufacturing value.</p>
                     </div>
                     <div className="group">
-                      <h4 className="text-xl font-bold text-slate-400 mb-3 group-hover:text-slate-950 transition-colors">Manual QC & Risk</h4>
+                      <h4 className="text-lg md:text-xl font-bold text-slate-400 mb-2 md:mb-3 group-hover:text-slate-950 transition-colors">Manual QC & Risk</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">Verification is purely manual, prone to error, and payments are often unprotected.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* bechoHub Side */}
-                <div className="space-y-12">
-                  <div className="flex items-center gap-4 mb-12">
+                <div className="space-y-12 p-6 md:p-0 bg-white md:bg-transparent rounded-2xl md:rounded-none shadow-xl md:shadow-none border border-slate-100 md:border-none relative z-10">
+                  <div className="flex items-center gap-4 mb-8 md:mb-12">
                     <div className="h-2 w-12 bg-cyan-500 rounded-full" />
                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-600">The bechoHub Advantage</span>
                   </div>
 
-                  <div className="space-y-10">
+                  <div className="space-y-8 md:space-y-10">
                     <div className="group">
-                      <h4 className="text-xl font-black text-slate-950 mb-3 flex items-center gap-2">
+                      <h4 className="text-xl font-black text-slate-950 mb-2 md:mb-3 flex items-center gap-2">
                         <CheckCircle2 className="h-5 w-5 text-cyan-600" /> Real-time Capacity
                       </h4>
                       <p className="text-slate-500 text-sm leading-relaxed font-light">Direct visibility into live assembly lines and verified production benchmarks.</p>
                     </div>
                     <div className="group">
-                      <h4 className="text-xl font-black text-slate-950 mb-3 flex items-center gap-2">
+                      <h4 className="text-xl font-black text-slate-950 mb-2 md:mb-3 flex items-center gap-2">
                         <CheckCircle2 className="h-5 w-5 text-cyan-600" /> Direct-to-Factory
                       </h4>
                       <p className="text-slate-500 text-sm leading-relaxed font-light">Eliminate middlemen. Our protocol connects you straight to the factory floor floor for primary pricing.</p>
                     </div>
                     <div className="group">
-                      <h4 className="text-xl font-black text-slate-950 mb-3 flex items-center gap-2">
+                      <h4 className="text-xl font-black text-slate-950 mb-2 md:mb-3 flex items-center gap-2">
                         <CheckCircle2 className="h-5 w-5 text-cyan-600" /> Automated Trust
                       </h4>
                       <p className="text-slate-500 text-sm leading-relaxed font-light">Smart-escrow and IoT-enabled quality tracking built into every production cycle.</p>

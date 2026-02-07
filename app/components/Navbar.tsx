@@ -35,7 +35,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full top-0 left-0 z-50 pointer-events-none flex justify-center p-6 md:p-8">
+    <nav className="fixed w-full top-0 left-0 z-50 pointer-events-none flex justify-center p-4 md:p-8">
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -101,7 +101,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-24 left-6 right-6 p-8 bg-white border border-slate-100 rounded-[32px] shadow-2xl flex flex-col gap-6 md:hidden pointer-events-auto"
+            className="fixed top-20 left-4 right-4 p-6 bg-white/90 backdrop-blur-xl border border-slate-200/50 rounded-[32px] shadow-2xl flex flex-col gap-6 md:hidden pointer-events-auto z-40"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (

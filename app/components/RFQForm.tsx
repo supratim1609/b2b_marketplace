@@ -16,6 +16,38 @@ export default function RFQForm() {
         { id: 3, name: "Identity" },
     ];
 
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async () => {
+        setIsSubmitting(true);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+    };
+
+    if (isSubmitted) {
+        return (
+            <div className="bg-white/[0.03] backdrop-blur-3xl rounded-[32px] md:rounded-[48px] border border-white/5 overflow-hidden shadow-2xl p-12 flex items-center justify-center min-h-[500px]">
+                <div className="text-center">
+                    <div className="w-20 h-20 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-cyan-500/20 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
+                        <Check className="h-8 w-8 text-cyan-400" strokeWidth={3} />
+                    </div>
+                    <h3 className="text-3xl font-black text-white uppercase mb-4 tracking-tight">RFQ Broadcasted</h3>
+                    <p className="text-slate-400 mb-8 max-w-md mx-auto leading-relaxed">
+                        Your request has been sent to <span className="text-cyan-400 font-bold">142 verified suppliers</span> matching your criteria. Expect bids within 24 hours.
+                    </p>
+                    <button
+                        onClick={() => window.location.href = '/'}
+                        className="px-8 py-4 bg-white text-slate-950 rounded-full font-black text-xs uppercase tracking-[0.2em] hover:bg-cyan-50 transition-all font-bold"
+                    >
+                        Return to Hub
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="bg-white/[0.03] backdrop-blur-3xl rounded-[32px] md:rounded-[48px] border border-white/5 overflow-hidden shadow-2xl">
             {/* Progress Bar */}
@@ -151,9 +183,11 @@ export default function RFQForm() {
                         </button>
                     ) : (
                         <button
-                            className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all flex items-center gap-3 active:scale-95"
+                            onClick={handleSubmit}
+                            disabled={isSubmitting}
+                            className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all flex items-center gap-3 active:scale-95 disabled:opacity-50 disabled:grayscale"
                         >
-                            Broadcast RFQ <Sparkles className="h-4 w-4" />
+                            {isSubmitting ? "Broadcasting..." : <>Broadcast RFQ <Sparkles className="h-4 w-4" /></>}
                         </button>
                     )}
                 </div>
