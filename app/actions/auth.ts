@@ -35,6 +35,62 @@ export async function signup(prevState: any, formData: FormData) {
     });
 
     if (error) {
+        // Handle "User already registered" scenario for Dual Roles
+        if (error.message.includes("already registered") || error.code === "user_already_exists") {
+            console.log("User exists, attempting role upgrade:", email);
+
+            // Try to sign in to verify ownership
+            const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+                email,
+                password: password
+            });
+
+            if (signInError) {
+                return { error: "Account exists. Please log in or use correct password to add this role." };
+            }
+
+            if (signInData.user) {
+                // Fetch existing profile
+                const { data: existingProfile } = await supabase
+                    .from('profiles')
+                    .select('role')
+                    .eq('id', signInData.user.id)
+                    .single();
+
+                let newRole = role;
+                if (existingProfile) {
+                    // If current role is different from new role, UPGRADE to 'both'
+                    if (existingProfile.role === 'buyer' && role === 'supplier') newRole = 'both';
+                    else if (existingProfile.role === 'supplier' && role === 'buyer') newRole = 'both';
+                    else if (existingProfile.role === 'both') newRole = 'both';
+                    else if (existingProfile.role === role) newRole = role; // No change
+                }
+
+                // Update Profile with new role
+                const { error: updateError } = await supabase
+                    .from('profiles')
+                    .upsert({
+                        id: signInData.user.id,
+                        email: email,
+                        // We update the fields to match the latest submission
+                        first_name: firstName.split(" ")[0],
+                        last_name: firstName.split(" ").slice(1).join(" "),
+                        company_name: companyName,
+                        role: newRole, // The Upgraded Role
+                        category: category,
+                        business_scale: businessScale,
+                        gst_number: gstNumber,
+                    }, { onConflict: 'id' });
+
+                if (updateError) {
+                    console.error("Profile Upgrade Error:", updateError);
+                    return { error: "Failed to update profile role." };
+                }
+
+                return { success: true, message: "Profile updated! You now have access to both Buyer and Supplier features." };
+            }
+        }
+
         console.error("Signup Error:", error);
         return { error: error.message };
     }

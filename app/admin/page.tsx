@@ -140,7 +140,16 @@ export default function AdminDashboard() {
 
     // Filter Logic
     const filteredProfiles = profiles.filter(profile => {
-        const matchesRole = filterRole === 'all' || profile.role === filterRole;
+        const matchesRole = filterRole === 'all' ||
+            profile.role === filterRole ||
+            profile.role === 'both'; // Include 'both' in specific filters
+
+        // Refined Logic:
+        // If filter is 'buyer', show 'buyer' AND 'both'
+        // If filter is 'supplier', show 'supplier' AND 'both'
+        if (filterRole === 'buyer' && profile.role !== 'buyer' && profile.role !== 'both') return false;
+        if (filterRole === 'supplier' && profile.role !== 'supplier' && profile.role !== 'both') return false;
+
         const searchLower = searchQuery.toLowerCase();
         const matchesSearch =
             profile.first_name?.toLowerCase().includes(searchLower) ||
@@ -148,13 +157,13 @@ export default function AdminDashboard() {
             profile.company_name?.toLowerCase().includes(searchLower) ||
             profile.email?.toLowerCase().includes(searchLower);
 
-        return matchesRole && matchesSearch;
+        return matchesSearch;
     });
 
     // Calculate Stats (Real Data)
     const totalUsers = profiles.length;
-    const buyers = profiles.filter(p => p.role === 'buyer').length;
-    const suppliers = profiles.filter(p => p.role === 'supplier').length;
+    const buyers = profiles.filter(p => p.role === 'buyer' || p.role === 'both').length;
+    const suppliers = profiles.filter(p => p.role === 'supplier' || p.role === 'both').length;
 
     // Calculate New Users This Week
     const now = new Date();
@@ -382,9 +391,11 @@ export default function AdminDashboard() {
                                         <td className="px-6 py-4 font-medium">{profile.company_name}</td>
                                         <td className="px-6 py-4">
                                             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider
-                                                ${profile.role === 'buyer' ? 'bg-cyan-50 text-cyan-700 border border-cyan-100' : 'bg-indigo-50 text-indigo-700 border border-indigo-100'}
+                                                ${profile.role === 'buyer' ? 'bg-cyan-50 text-cyan-700 border border-cyan-100' :
+                                                    profile.role === 'supplier' ? 'bg-indigo-50 text-indigo-700 border border-indigo-100' :
+                                                        'bg-purple-50 text-purple-700 border border-purple-100'} 
                                             `}>
-                                                {profile.role}
+                                                {profile.role === 'both' ? 'Hybrid' : profile.role}
                                             </span>
                                         </td>
                                         <td className="px-6 py-4">
