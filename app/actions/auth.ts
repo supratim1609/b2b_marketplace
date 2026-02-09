@@ -46,7 +46,7 @@ export async function signup(prevState: any, formData: FormData) {
             });
 
             if (signInError) {
-                return { error: "Account exists. Please log in or use correct password to add this role." };
+                return { error: "This email is already registered. To add a new role (Buyer/Supplier) to your existing account, please enter your ORIGINAL password." };
             }
 
             if (signInData.user) {
